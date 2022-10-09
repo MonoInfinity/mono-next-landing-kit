@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: FadeIn 0.3s ease-in-out forwards;
+}
+.leaflet-control-container .leaflet-routing-container-hide {
+    display: none;
+}
+
+.home-bg {
+    background-image: url('/assets/images/home-bg.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
