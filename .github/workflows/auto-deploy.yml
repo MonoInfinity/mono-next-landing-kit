@@ -18,7 +18,7 @@ jobs:
             - name: Build next
               run: |
                   npm install
-                  npm run export
+                  npm run build:export
             - run: touch out/.nojekyll
             - name: Deploy 🚀
               uses: JamesIves/github-pages-deploy-action@3.5.9
