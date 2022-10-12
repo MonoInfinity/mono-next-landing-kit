@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'swiper/css';
 import type { AppProps } from 'next/app';
 import Script from 'next/script';
 import { Provider } from 'react-redux';
@@ -10,6 +11,8 @@ import { ToastContainer } from 'react-toastify';
 const queryClient = new QueryClient();
 
 import { ProgressBarProvider } from '../src/core/contexts';
+import { MainNavBar } from '../src/core/components/navbars';
+import BackgroundLayout from '../src/core/components/layouts/BackgroundLayout';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -21,9 +24,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <QueryClientProvider client={queryClient}>
                         <ToastContainer />
                         <ProgressBarProvider>
-                            <ProgressLoadingBar />
-
-                            <Component {...pageProps} />
+                            <BackgroundLayout>
+                                <ProgressLoadingBar />
+                                <MainNavBar />
+                                <Component {...pageProps} />
+                            </BackgroundLayout>
                         </ProgressBarProvider>
                     </QueryClientProvider>
                 </AutoLoginWrapper>
