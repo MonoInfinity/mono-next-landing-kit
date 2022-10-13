@@ -23,7 +23,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({
                 <div className="absolute top-0 left-0 z-0 w-full h-full overflow-hidden rounded-3xl">{children}</div>
             </div>
             {isLaptop && (
-                <div className={`w-[388px] h-4 bg-white rounded relative ${laptopClassName}`}>
+                <div className={`md:w-[388px] w-[200px] h-4 bg-white rounded relative ${laptopClassName}`}>
                     <div className="absolute bottom-0 block h-2 -translate-x-1/2 bg-gray-400 rounded-lg w-28 left-1/2"></div>
                 </div>
             )}

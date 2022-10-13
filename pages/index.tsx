@@ -64,7 +64,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
                 <div className="relative flex flex-col items-center w-full min-h-screen space-y-12 text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center mb-12">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -77,7 +77,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider title">
+                            <div className="flex flex-col items-center justify-center px-4 space-y-1 overflow-visible text-xl font-bold tracking-wider title">
                                 <h1 className="text-lg lg:text-4xl">Building Your Modern Web App</h1>
                                 <h1 className="space-y-4 md:text-5xl ">Being the higher level</h1>
                             </div>
@@ -127,7 +127,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center w-full space-x-10 lg:flex-row">
+                    <div className="flex flex-col items-center justify-center w-full space-x-10 xl:flex-row">
                         <Swiper
                             slidesPerView={'auto'}
                             centeredSlides={true}
@@ -139,7 +139,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                             className="h-[800px]"
                         >
                             <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="sm:h-[512px] sm:w-[768px] w-[336px] h-[216px]" isLaptop={true} laptopClassName="sm:w-[688px]">
+                                <Devices className="sm:h-[512px] sm:w-[668px] w-[336px] h-[216px]" isLaptop={true} laptopClassName="sm:w-[688px]">
                                     <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
                                 </Devices>
                             </SwiperSlide>
@@ -149,7 +149,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 </Devices>
                             </SwiperSlide>
                             <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="w-[200px] h-[400px] ">
+                                <Devices className="w-[300px] h-[400px] ">
                                     <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
                                 </Devices>
                             </SwiperSlide>
