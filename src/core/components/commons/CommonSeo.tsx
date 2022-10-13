@@ -6,5 +6,5 @@ interface CommonSeoProps {
 }
 
 export const CommonSeo: React.FC<CommonSeoProps> = ({ title }) => {
-    return <NextSeo title={`${title} | Tripper`} />;
+    return <NextSeo title={`${title} `} />;
 };
