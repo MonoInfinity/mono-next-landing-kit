@@ -126,20 +126,11 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div>
-                        <Contact />
-                        <FormWrapper methods={formMethods}>
-                            <form className="w-full max-w-xl px-4 py-8 bg-black">
-                                <h3 className="text-xl font-semibold">Contact</h3>
-                                <TextInput name="email" label="Name" />
-                                <TextInput name="name" label="Email" />
-                                <TextInput name="name" label="Phone number" />
-                                <TextareaField name="name" label="Message" />
-                                <button>
-                                    <span>Submit</span>
-                                </button>
-                            </form>
-                        </FormWrapper>
+                    <div className="flex w-full space-x-4">
+                        <div className="flex-1">123</div>
+                        <div className="flex-1">
+                            <Contact />
+                        </div>
                     </div>
                     <footer className="w-full max-w-5xl py-8 space-y-4">
                         <div className="flex items-center justify-between w-full space-y-4">
