@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { ContainerLayout } from '../src/core/components/layouts/ContainerLayout';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+import { Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
 import { CommonSeo, FormWrapper, TextareaField, TextInput } from '../src/core/components';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { routes } from '../src/core/routes';
 import { Contact } from '../src/core/components/contacts';
+import { Devices } from '../src/core/components/devices';
 
 interface HomePageProps {}
 
@@ -87,7 +88,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         <Swiper
                             effect={'coverflow'}
                             grabCursor={true}
-                            // centeredSlides={true}
+                            centeredSlides={true}
                             slidesPerView={slidesPerView}
                             loop={true}
                             autoplay={{ delay: 3000, pauseOnMouseEnter: true, disableOnInteraction: false }}
@@ -126,9 +127,34 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="flex w-full space-x-4">
-                        <div className="flex-1">123</div>
-                        <div className="flex-1">
+                    <div className="flex flex-col items-center justify-center w-full space-x-10 lg:flex-row">
+                        <Swiper
+                            slidesPerView={'auto'}
+                            centeredSlides={true}
+                            spaceBetween={0}
+                            direction={'vertical'}
+                            loop={true}
+                            autoplay={{ delay: 2000, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                            modules={[Pagination, Autoplay]}
+                            className="h-[800px]"
+                        >
+                            <SwiperSlide className="flex items-center justify-center">
+                                <Devices className="sm:h-[512px] sm:w-[768px] w-[336px] h-[216px]" isLaptop={true} laptopClassName="sm:w-[688px]">
+                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
+                                </Devices>
+                            </SwiperSlide>
+                            <SwiperSlide className="flex items-center justify-center">
+                                <Devices className="sm:w-[350px] sm:h-[450px] w-[320px] h-[400px]">
+                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
+                                </Devices>
+                            </SwiperSlide>
+                            <SwiperSlide className="flex items-center justify-center">
+                                <Devices className="w-[200px] h-[400px] ">
+                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
+                                </Devices>
+                            </SwiperSlide>
+                        </Swiper>
+                        <div className="w-full max-w-md">
                             <Contact />
                         </div>
                     </div>

@@ -16,7 +16,6 @@
     animation: FadeIn 0.3s ease-in-out forwards;
 }
 
-
 .swiper-container {
     width: 750px;
     padding-top: 50px;
@@ -27,8 +26,37 @@
 }
 
 .title {
-    background: linear-gradient(to right, #e82fcf 20%, #fefefe 100%); 
+    background: linear-gradient(to right, #e82fcf 20%, #fefefe 100%);
     background-clip: text;
-    
+
     color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    background: hsl(220, 100%, 100%);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    position: relative;
+    isolation: isolate;
 }
