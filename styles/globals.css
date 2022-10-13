@@ -33,3 +33,10 @@
 .swiper-slide {
     width: 300px;
 }
+
+.hello {
+    background: linear-gradient(to right, #e82fcf 0%, #fefefe 100%); 
+    background-clip: text;
+    
+    color: transparent;
+}
