@@ -15,15 +15,7 @@
 .fade-in {
     animation: FadeIn 0.3s ease-in-out forwards;
 }
-.leaflet-control-container .leaflet-routing-container-hide {
-    display: none;
-}
 
-.home-bg {
-    background-image: url('/assets/images/home-bg.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
 
 .swiper-container {
     width: 750px;
@@ -34,8 +26,8 @@
     width: 300px;
 }
 
-.hello {
-    background: linear-gradient(to right, #e82fcf 0%, #fefefe 100%); 
+.title {
+    background: linear-gradient(to right, #e82fcf 20%, #fefefe 100%); 
     background-clip: text;
     
     color: transparent;

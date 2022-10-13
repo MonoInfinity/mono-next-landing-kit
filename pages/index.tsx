@@ -3,7 +3,11 @@ import { ContainerLayout } from '../src/core/components/layouts/ContainerLayout'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
-import { CommonSeo } from '../src/core/components';
+import { CommonSeo, FormWrapper, TextareaField, TextInput } from '../src/core/components';
+import { useForm } from 'react-hook-form';
+import Link from 'next/link';
+import { routes } from '../src/core/routes';
+import { Contact } from '../src/core/components/contacts';
 
 interface HomePageProps {}
 
@@ -37,6 +41,7 @@ const content = [
 
 const HomePage: React.FC<HomePageProps> = () => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
+    const formMethods = useForm();
 
     const { width } = useWindowDimensions();
 
@@ -60,7 +65,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                 <div className="relative flex flex-col items-center w-full min-h-screen space-y-12 text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
                     <div className="flex flex-col items-center">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
-                            <div className="relative w-20 h-20 rounded-lg rotate-12">
+                            <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
@@ -71,7 +76,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider hello">
+                            <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider title">
                                 <h1 className="text-lg lg:text-4xl">Building Your Modern Web App</h1>
                                 <h1 className="space-y-4 md:text-5xl ">Being the higher level</h1>
                             </div>
@@ -120,6 +125,54 @@ const HomePage: React.FC<HomePageProps> = () => {
                             ))}
                         </Swiper>
                     </div>
+
+                    <div>
+                        <Contact />
+                        <FormWrapper methods={formMethods}>
+                            <form className="w-full max-w-xl px-4 py-8 bg-black">
+                                <h3 className="text-xl font-semibold">Contact</h3>
+                                <TextInput name="email" label="Name" />
+                                <TextInput name="name" label="Email" />
+                                <TextInput name="name" label="Phone number" />
+                                <TextareaField name="name" label="Message" />
+                                <button>
+                                    <span>Submit</span>
+                                </button>
+                            </form>
+                        </FormWrapper>
+                    </div>
+                    <footer className="w-full max-w-5xl py-8 space-y-4">
+                        <div className="flex items-center justify-between w-full space-y-4">
+                            <ul className="flex space-x-4 text-sm text-gray-400 ">
+                                <li>Contact</li>
+                                <li>About</li>
+                                <li>Services</li>
+                            </ul>
+                            <ul className="flex space-x-4">
+                                <li className="">
+                                    <div className="w-6 h-6">
+                                        <img src="/assets/images/github.png" alt="Github" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="w-6 h-6">
+                                        <img src="/assets/images/facebook.png" alt="Facebook" />
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="w-6 h-6">
+                                        <img src="/assets/images/github.png" alt="Github" />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="flex items-center justify-between mx-auto text-sm text-gray-400 l">
+                            <div className="">© {new Date().getFullYear()} Mono Infinity. All Rights Reserved. </div>
+                            <Link href={routes.termAndConditions()}>
+                                <a className="">Terms And Conditions</a>
+                            </Link>
+                        </div>
+                    </footer>
                 </div>
             </ContainerLayout>
         </>
