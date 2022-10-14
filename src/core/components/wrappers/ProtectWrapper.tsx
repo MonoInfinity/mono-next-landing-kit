@@ -15,7 +15,7 @@ export const ProtectWrapper: React.FC<ProtectWrapperProps> = ({ children, accept
 
     React.useEffect(() => {
         if ((user.isLogin && !user.isAuth) || acceptRoles.findIndex((item) => item === user.role) === -1) {
-            router.push(routes.auth.login());
+            // router.push(routes.auth.login());
         }
     }, [acceptRoles, user, router]);
 
