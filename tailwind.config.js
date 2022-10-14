@@ -2,6 +2,9 @@ module.exports = {
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            screen: {
+                xs: '480px',
+            },
             colors: {
                 primary: {
                     DEFAULT: '#6268F1',

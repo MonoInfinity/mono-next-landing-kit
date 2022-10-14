@@ -77,7 +77,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center justify-center px-4 space-y-1 overflow-visible text-xl font-bold tracking-wider title">
+                            <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider title ">
                                 <h1 className="text-lg lg:text-4xl">Building Your Modern Web App</h1>
                                 <h1 className="space-y-4 md:text-5xl ">Being the higher level</h1>
                             </div>
@@ -134,22 +134,26 @@ const HomePage: React.FC<HomePageProps> = () => {
                             spaceBetween={0}
                             direction={'vertical'}
                             loop={true}
-                            autoplay={{ delay: 2000, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                            // autoplay={{ delay: 2000, pauseOnMouseEnter: true, disableOnInteraction: false }}
                             modules={[Pagination, Autoplay]}
                             className="h-[800px]"
                         >
                             <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="sm:h-[512px] sm:w-[668px] w-[336px] h-[216px]" isLaptop={true} laptopClassName="sm:w-[688px]">
+                                <Devices
+                                    className="sm:h-[512px] sm:w-[620px] xs:w-[440px] xs:h-[220px] w-[320px] h-[240px]"
+                                    isLaptop={true}
+                                    laptopClassName="sm:w-[600px]"
+                                >
                                     <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
                                 </Devices>
                             </SwiperSlide>
                             <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="sm:w-[350px] sm:h-[450px] w-[320px] h-[400px]">
+                                <Devices className="sm:w-[350px] sm:h-[450px] w-[360px] h-[400px]">
                                     <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
                                 </Devices>
                             </SwiperSlide>
                             <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="w-[300px] h-[400px] ">
+                                <Devices className="xs:w-[280px] xs:h-[400px]  h-[360] w-[260px]">
                                     <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
                                 </Devices>
                             </SwiperSlide>
