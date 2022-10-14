@@ -2,7 +2,7 @@ import React, { HTMLAttributes, PropsWithChildren, useEffect } from 'react';
 import _clsx from 'clsx';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useWindowDimensions } from '../../hooks/useWindowDimension';
-import { Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination } from 'swiper';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 
 const content = [
     {
@@ -33,8 +33,7 @@ const content = [
 ];
 
 interface DevicesProps extends HTMLAttributes<HTMLDivElement>, PropsWithChildren {
-    isLaptop?: boolean;
-    laptopClassName?: string;
+    defaultSize?: DeviceType;
 }
 export enum DeviceType {
     Laptop = 'laptop',
@@ -42,10 +41,9 @@ export enum DeviceType {
     Tablet = 'tablet',
 }
 
-export const Devices: React.FunctionComponent<DevicesProps> = ({ className = 'w-[300px] h-[400px] ', children, isLaptop = false }) => {
+export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
-    const [screenSize, setScreenSize] = React.useState<DeviceType>(DeviceType.Mobile);
-    const { width } = useWindowDimensions();
+    const [screenSize, setScreenSize] = React.useState<DeviceType>(defaultSize || DeviceType.Mobile);
 
     React.useEffect(() => {
         if (screenSize === DeviceType.Laptop) {
@@ -61,15 +59,17 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ className = 'w-
     }, [screenSize]);
 
     useEffect(() => {
-        const timeOutId = setInterval(() => {
-            setScreenSize((pre) =>
-                pre === DeviceType.Laptop ? DeviceType.Tablet : pre === DeviceType.Tablet ? DeviceType.Mobile : DeviceType.Laptop
-            );
-        }, 3000);
-        return () => {
-            clearInterval(timeOutId);
-        };
-    }, []);
+        if (!defaultSize) {
+            const timeOutId = setInterval(() => {
+                setScreenSize((pre) =>
+                    pre === DeviceType.Laptop ? DeviceType.Tablet : pre === DeviceType.Tablet ? DeviceType.Mobile : DeviceType.Laptop
+                );
+            }, 3000);
+            return () => {
+                clearInterval(timeOutId);
+            };
+        }
+    }, [defaultSize]);
 
     return (
         <div className="relative flex flex-col items-center justify-center p-4 space-y-3 w-fit">
