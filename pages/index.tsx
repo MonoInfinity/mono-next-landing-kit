@@ -128,33 +128,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                     </div>
 
                     <div className="flex flex-col items-center justify-center w-full space-x-10 xl:flex-row">
-                        <Swiper
-                            slidesPerView={'auto'}
-                            centeredSlides={true}
-                            spaceBetween={0}
-                            direction={'vertical'}
-                            loop={true}
-                            autoplay={{ delay: 2000, pauseOnMouseEnter: true, disableOnInteraction: false }}
-                            modules={[Pagination, Autoplay]}
-                            className="h-[800px]"
-                        >
-                            <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="sm:h-[512px] sm:w-[668px] w-[336px] h-[216px]" isLaptop={true} laptopClassName="sm:w-[688px]">
-                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
-                                </Devices>
-                            </SwiperSlide>
-                            <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="sm:w-[350px] sm:h-[450px] w-[320px] h-[400px]">
-                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
-                                </Devices>
-                            </SwiperSlide>
-                            <SwiperSlide className="flex items-center justify-center">
-                                <Devices className="w-[300px] h-[400px] ">
-                                    <img src="/assets/images/slide-1.jpg" className="object-cover w-full h-full" />
-                                </Devices>
-                            </SwiperSlide>
-                        </Swiper>
-                        <div className="w-full max-w-md">
+                        <div className="w-[900px] justify-center flex">
+                            <Devices></Devices>
+                        </div>
+                        <div className="flex flex-1">
                             <Contact />
                         </div>
                     </div>
