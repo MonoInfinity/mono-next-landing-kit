@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { ContainerLayout } from '../src/core/components/layouts/ContainerLayout';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
+import { Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
 import { CommonSeo, FormWrapper, TextareaField, TextInput } from '../src/core/components';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { routes } from '../src/core/routes';
 import { Contact } from '../src/core/components/contacts';
+import { Devices } from '../src/core/components/devices';
 
 interface HomePageProps {}
 
@@ -63,7 +64,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
                 <div className="relative flex flex-col items-center w-full min-h-screen space-y-12 text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center mb-12">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -76,7 +77,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider title">
+                            <div className="flex flex-col items-center justify-center px-4 space-y-1 overflow-visible text-xl font-bold tracking-wider title">
                                 <h1 className="text-lg lg:text-4xl">Building Your Modern Web App</h1>
                                 <h1 className="space-y-4 md:text-5xl ">Being the higher level</h1>
                             </div>
@@ -87,7 +88,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         <Swiper
                             effect={'coverflow'}
                             grabCursor={true}
-                            // centeredSlides={true}
+                            centeredSlides={true}
                             slidesPerView={slidesPerView}
                             loop={true}
                             autoplay={{ delay: 3000, pauseOnMouseEnter: true, disableOnInteraction: false }}
@@ -126,9 +127,11 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="flex w-full space-x-4">
-                        <div className="flex-1">123</div>
-                        <div className="flex-1">
+                    <div className="flex flex-col items-center justify-center w-full space-x-10 xl:flex-row">
+                        <div className="w-[900px] justify-center flex">
+                            <Devices></Devices>
+                        </div>
+                        <div className="flex flex-1">
                             <Contact />
                         </div>
                     </div>
