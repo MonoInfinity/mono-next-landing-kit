@@ -6,6 +6,9 @@ module.exports = {
             body: ['IBM Plex Mono', 'Menlo', 'monospace'],
         },
         extend: {
+            maxWidth: {
+                app: '1440px',
+            },
             colors: {
                 primary: {
                     DEFAULT: '#6268F1',

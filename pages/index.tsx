@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form';
 import Link from 'next/link';
 import { routes } from '../src/core/routes';
 import { Contact } from '../src/core/components/contacts';
-import { Devices } from '../src/core/components/devices';
+import { Devices, DeviceType } from '../src/core/components/devices';
 
 interface HomePageProps {}
 
@@ -64,7 +64,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
                 <div className="relative flex flex-col items-center w-full min-h-screen space-y-12 text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center mb-12">
+                    <div className="flex flex-col items-center mb-12 max-w-app">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -79,12 +79,12 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                             <div className="flex flex-col items-center justify-center px-4 space-y-1 overflow-visible text-xl font-bold tracking-wider title">
                                 <h1 className="text-lg lg:text-4xl">Building Your Modern Web App</h1>
-                                <h1 className="space-y-4 md:text-5xl ">Being the higher level</h1>
+                                <h1 className="space-y-4 md:text-5xl ">Being Your Project To A Higher Level</h1>
                             </div>
                         </div>
                     </div>
 
-                    <div className="relative w-full px-4 sm:px-0">
+                    <div className="relative w-full px-4 sm:px-0 max-w-app">
                         <Swiper
                             effect={'coverflow'}
                             grabCursor={true}
@@ -127,12 +127,63 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="flex flex-col items-center justify-center w-full space-x-10 xl:flex-row">
-                        <div className="w-[900px] justify-center flex">
-                            <Devices></Devices>
+                    <div className="w-full max-w-app">
+                        <div></div>
+                        <div className="flex flex-col h-[600px] items-center justify-center w-full space-x-16 xl:flex-row">
+                            <div className="flex justify-center flex-1 ">
+                                <div className="hidden lg:block ">
+                                    <Devices />
+                                </div>
+                            </div>
+                            <div className="flex-1">Support Multiple Devices</div>
                         </div>
-                        <div className="flex flex-1">
+                    </div>
+                    <div className="relative  transform scale-[45%] h-[550px] lg:hidden space-y-8 flex flex-col justify-center items-center ">
+                        <div className="transform ">
+                            <Devices defaultSize={DeviceType.Laptop} />
+                        </div>
+                        <div className="flex space-x-4">
+                            <Devices defaultSize={DeviceType.Tablet} />
+                            <Devices defaultSize={DeviceType.Mobile} />
+                        </div>
+                    </div>
+                    <div className="flex flex-1 w-full max-w-app">
+                        <div className="flex-1">dddddddd</div>
+                        <div className="flex items-center justify-center flex-1">
                             <Contact />
+                        </div>
+                    </div>
+                    <div className="flex flex-1 w-full max-w-app">
+                        <div className="flex items-center justify-center flex-1">
+                            <Contact />
+                        </div>
+                        <div className="flex-1">our service</div>
+                    </div>
+                    <div className="w-full py-16 bg-pink-500 bg-opacity-50 ">
+                        <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
+                            <div className="flex items-center justify-between w-full space-x-16">
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                                <div className="w-24 h-24">
+                                    <img src="https://picsum.photos/200/200" alt="123" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <footer className="w-full max-w-5xl py-8 space-y-4">
