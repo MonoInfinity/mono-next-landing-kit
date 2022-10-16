@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { Provider } from 'react-redux';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { store } from '../src/core/store';
-import { AutoLoginWrapper, ProgressLoadingBar } from '../src/core/components';
+import { AutoLoginWrapper, MainFooter, ProgressLoadingBar } from '../src/core/components';
 import { ToastContainer } from 'react-toastify';
 const queryClient = new QueryClient();
 
@@ -28,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                                 <ProgressLoadingBar />
                                 <MainNavBar />
                                 <Component {...pageProps} />
+                                <MainFooter />
                             </BackgroundLayout>
                         </ProgressBarProvider>
                     </QueryClientProvider>
