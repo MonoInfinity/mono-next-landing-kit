@@ -34,6 +34,7 @@ const content = [
 
 interface DevicesProps extends HTMLAttributes<HTMLDivElement>, PropsWithChildren {
     defaultSize?: DeviceType;
+    setSize?: (size: DeviceType) => void;
 }
 export enum DeviceType {
     Laptop = 'laptop',
@@ -41,7 +42,7 @@ export enum DeviceType {
     Tablet = 'tablet',
 }
 
-export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) => {
+export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize }) => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
     const [screenSize, setScreenSize] = React.useState<DeviceType>(defaultSize || DeviceType.Mobile);
 
@@ -70,6 +71,12 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) 
             };
         }
     }, [defaultSize]);
+
+    useEffect(() => {
+        if (setSize) {
+            setSize(screenSize);
+        }
+    }, [screenSize]);
 
     return (
         <div className="relative flex flex-col items-center justify-center p-4 space-y-3 w-fit">

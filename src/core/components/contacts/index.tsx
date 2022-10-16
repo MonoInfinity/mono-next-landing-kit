@@ -117,12 +117,12 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
     };
 
     return (
-        <div className={` z-30  max-w-md px-4 lg:px-0  w-full transform duration-1000 opacity-100 scale-100 `}>
+        <div className={`z-30  max-w-md px-4 lg:px-0  w-full transform duration-1000 opacity-100 scale-100 `}>
             <div className="mx-auto rounded-md bg-opacity-70 bg-gradient-to-bl from-purple-600 via-sky-600">
                 <FormWrapper methods={formMethods}>
                     <form
                         onSubmit={formMethods.handleSubmit(handleOnSubmit)}
-                        className="px-2 py-8 space-y-4 transform bg-white rounded-md lg:py-16 md:px-8 md:-translate-x-4 md:translate-y-4 bg-opacity-80 md:w-contact"
+                        className="px-2 py-8 space-y-4 duration-300 transform bg-white rounded-md lg:py-16 md:px-8 md:hover:-translate-x-4 md:hover:translate-y-4 bg-opacity-80 md:w-contact"
                     >
                         <div className="mb-8 space-y-2">
                             <h1 className="text-4xl font-semibold text-center text-gray-900">Get In Touch</h1>
