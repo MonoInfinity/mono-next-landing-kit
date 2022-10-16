@@ -131,7 +131,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="w-full max-w-app">
+                    <div className="w-full px-4 max-w-app">
                         <div className="flex flex-col items-center justify-center lg:items-center lg:space-x-16 xl:flex-row">
                             <div className="lg:flex hidden justify-center lg:w-[720px] sm:h-[640px]">
                                 <div className="relative z-10 flex items-center">
@@ -147,12 +147,12 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 <div className="flex flex-col space-y-3">
                                     <div
                                         className={clsx(
-                                            'font-semibold text-5xl duration-300 text-white text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r animate-color-animation'
+                                            'font-semibold lg:text-5xl md:text-4xl sm:text-3xl text-2xl duration-300 text-white text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r animate-color-animation'
                                         )}
                                     >
                                         Support Multiple Devices
                                     </div>
-                                    <p className={clsx('font-medium duration-300 text-gray-300 text-lg')}>
+                                    <p className={clsx('font-medium duration-300 text-gray-300 lg:text-lg md:text-base text-sm')}>
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
                                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
                                         make a type specimen book.
