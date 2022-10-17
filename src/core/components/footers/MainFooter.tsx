@@ -2,20 +2,29 @@ import Link from 'next/link';
 
 import * as React from 'react';
 
-const footerList: Array<{ label: string; url: string }> = [
-    { label: 'Features', url: '/features' },
-    { label: 'Pricing', url: '/pricing' },
-    { label: 'Resources', url: '/resources' },
-    { label: 'Blog', url: '/blog' },
-    { label: 'About', url: '/about' },
-    { label: 'Help & Support', url: '/help' },
+const socialLinks = [
+    {
+        name: 'Github',
+        imageUrl: '/assets/images/github.png',
+        link: 'https://github.com/MonoInfinity',
+    },
+    {
+        name: 'Facebook',
+        imageUrl: '/assets/images/facebook.png',
+        link: 'https://www.facebook.com/profile.php?id=100083413363217',
+    },
+    {
+        name: 'Youtube',
+        imageUrl: '/assets/images/youtube.png',
+        link: 'https://www.youtube.com/channel/UCHTHyBTGhDAz_iJtI9tVu2w',
+    },
 ];
 interface MainFooterProps {}
 
 export const MainFooter: React.FC<MainFooterProps> = () => {
     return (
         <footer className="relative flex flex-col items-center justify-center px-10 text-white">
-            <div className="grid max-w-screen-lg grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
+            <div className="grid max-w-screen-xl grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
                 <div className="col-span-3 md:col-span-4 ">
                     <div className="flex flex-col space-y-4">
                         <Link href={'/'} passHref>
@@ -26,23 +35,17 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                                 <p className="text-[#FDFBF9] text-4xl font-semibold lg:block hidden">Mono Infinity</p>
                             </div>
                         </Link>
-                        <p className="text-gray-400 ">Design, Develop and Deploy website to your business. Powered by Mono Infinity team.</p>
+                        <p className="text-sm text-gray-400">Design, Develop and Deploy website to your business. Powered by Mono Infinity team.</p>
                         <ul className="flex space-x-4">
-                            <li className="">
-                                <div className="w-6 h-6">
-                                    <img src="/assets/images/github.png" alt="Github" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="w-6 h-6">
-                                    <img src="/assets/images/facebook.png" alt="Facebook" />
-                                </div>
-                            </li>
-                            <li>
-                                <div className="w-6 h-6">
-                                    <img src="/assets/images/github.png" alt="Github" />
-                                </div>
-                            </li>
+                            {socialLinks.map((socialLink) => (
+                                <li className="" key={socialLink.name}>
+                                    <Link href={socialLink.link}>
+                                        <a className="" href={socialLink.link}>
+                                            <img src={socialLink.imageUrl} alt={socialLink.name} className="w-6 h-6" />
+                                        </a>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                     <div className="flex space-x-5">

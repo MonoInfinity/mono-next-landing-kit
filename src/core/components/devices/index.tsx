@@ -35,6 +35,7 @@ const content = [
 interface DevicesProps extends HTMLAttributes<HTMLDivElement>, PropsWithChildren {
     defaultSize?: DeviceType;
     setSize?: (size: DeviceType) => void;
+    delay?: 3000;
 }
 export enum DeviceType {
     Laptop = 'laptop',
@@ -42,7 +43,7 @@ export enum DeviceType {
     Tablet = 'tablet',
 }
 
-export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize }) => {
+export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize, delay }) => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
     const [screenSize, setScreenSize] = React.useState<DeviceType>(defaultSize || DeviceType.Mobile);
 
@@ -139,7 +140,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
                             centeredSlides={true}
                             slidesPerView={slidesPerView}
                             loop={true}
-                            autoplay={{ delay: 3000, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                            autoplay={{ delay: 300, pauseOnMouseEnter: true, disableOnInteraction: false }}
                             coverflowEffect={{
                                 rotate: 20,
                                 stretch: 0,
