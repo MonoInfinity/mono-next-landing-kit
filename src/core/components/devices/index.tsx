@@ -35,7 +35,6 @@ const content = [
 interface DevicesProps extends HTMLAttributes<HTMLDivElement>, PropsWithChildren {
     defaultSize?: DeviceType;
     setSize?: (size: DeviceType) => void;
-    delay?: 3000;
 }
 export enum DeviceType {
     Laptop = 'laptop',
@@ -43,7 +42,7 @@ export enum DeviceType {
     Tablet = 'tablet',
 }
 
-export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize, delay }) => {
+export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize }) => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
     const [screenSize, setScreenSize] = React.useState<DeviceType>(defaultSize || DeviceType.Mobile);
 
@@ -80,7 +79,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
     }, [screenSize]);
 
     return (
-        <div className="relative flex flex-col items-center justify-center p-4 space-y-3 w-fit">
+        <div className="relative z-10 flex flex-col items-center justify-center p-4 space-y-3 w-fit">
             <div
                 className={_clsx(
                     ` bg-gray-500 duration-300 rounded-3xl relative  before:content-[''] before:absolute before:bg-white before:rounded-[30px] before:-z-0 before:-inset-3 before:shadow-2xl `,
@@ -140,7 +139,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
                             centeredSlides={true}
                             slidesPerView={slidesPerView}
                             loop={true}
-                            autoplay={{ delay: 300, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                            autoplay={{ delay: 1500, pauseOnMouseEnter: true, disableOnInteraction: false }}
                             coverflowEffect={{
                                 rotate: 20,
                                 stretch: 0,

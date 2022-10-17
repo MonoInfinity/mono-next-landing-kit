@@ -122,9 +122,9 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
                 <FormWrapper methods={formMethods}>
                     <form
                         onSubmit={formMethods.handleSubmit(handleOnSubmit)}
-                        className="px-2 py-8 space-y-4 duration-300 transform bg-white rounded-md lg:py-16 md:px-8 md:focus:-translate-x-4 group md:focus:translate-y-4 md:hover:-translate-x-4 md:hover:translate-y-4 bg-opacity-80 md:w-contact"
+                        className="px-4 py-8 space-y-4 duration-300 transform bg-white rounded-md lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 md:focus-within:translate-x-0 group md:focus-within:translate-y-0 md:hover:translate-x-0 md:hover:translate-y-0 bg-opacity-80 md:w-contact"
                     >
-                        <div className="mb-8 space-y-2">
+                        <div className="space-y-2 lg:mb-8">
                             <h1 className="text-4xl font-semibold text-center text-gray-900">Get In Touch</h1>
                             <p className="text-center text-gray-500 ">Thank For Your Message.</p>
                         </div>
@@ -134,7 +134,7 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
                         <TextareaField name="message" label="Message" />
 
                         <div>
-                            <button className="inline-block px-6 py-2 font-semibold text-white duration-300 rounded-md bg-sky-600 hover:bg-sky-500 focus:outline-none">
+                            <button className="inline-block px-8 py-2 font-semibold text-white duration-300 bg-purple-600 rounded-sm focus:outline-none">
                                 Submit Message
                             </button>
                         </div>

@@ -82,7 +82,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
     const _renderNavLinks = (data: NavbarLinkProps[], level = 0) => {
         return data.map((item, index) =>
             item.children ? (
-                <div className={`relative w-fit sm:w-full z-index-10 `} key={`${item.name}-${level}-${index}`}>
+                <div className={`relative w-fit sm:w-full z-index-10`} key={`${item.name}-${level}-${index}`}>
                     <div className="cursor-pointer group">
                         <button className="w-full px-6 py-2 text-white duration-300 rounded-lg hover:text-indigo-500 hover:bg-slate-100 text-start">
                             {item.name}
@@ -113,7 +113,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 z-10 flex justify-center w-full">
+        <div className="fixed top-0 left-0 z-[999] flex justify-center w-full">
             <div className="absolute block w-full h-24 bg-inherit backdrop-blur-md"></div>
             <div className={`flex justify-between items-center p-6 fixed w-full max-w-[1440px] sm:bg-inherit ${isActive ? 'bg-violet-900' : ''}`}>
                 <Link href={'/'} passHref>
