@@ -80,7 +80,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
     }, [screenSize]);
 
     return (
-        <div className="relative flex flex-col items-center justify-center p-4 space-y-3 w-fit">
+        <div className="relative z-10 flex flex-col items-center justify-center p-4 space-y-3 w-fit">
             <div
                 className={_clsx(
                     ` bg-gray-500 duration-300 rounded-3xl relative  before:content-[''] before:absolute before:bg-white before:rounded-[30px] before:-z-0 before:-inset-3 before:shadow-2xl `,

@@ -152,13 +152,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     >
                                         Support Multiple Devices
                                     </div>
-                                    <ul className={clsx('font-medium duration-300 text-gray-300 lg:text-lg md:text-base text-sm')}>
-                                        <li>
-                                            <h1>Support Multiple Devices</h1>
-                                            Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
-                                            great on any screen.
-                                        </li>
-                                        <li>
+                                    <p className={clsx('font-medium duration-300 text-gray-300 lg:text-lg md:text-base text-sm')}>
+                                        Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks great
+                                        on any screen.
+                                        {/* <li>
                                             <h1>Grow your business</h1>
                                             Improve your results with the click of a button. Unbounce routes your visitors to the best landing page
                                             for people like them and—on average—gets you 30% more sales and signups.
@@ -170,8 +167,8 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         <li>
                                             <h1>Optimize SEO</h1>
                                             Support website live all the time
-                                        </li>
-                                    </ul>
+                                        </li> */}
+                                    </p>
                                     {/* <p>
                                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
                                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
@@ -181,7 +178,26 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="relative  transform scale-[45%] h-[550px] lg:hidden space-y-8 flex flex-col justify-center items-center ">
+                    <div className="w-full py-16 bg-pink-500 bg-opacity-50 ">
+                        <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
+                            <div className="flex items-center justify-between w-full space-x-16">
+                                {/* <li>
+                                            <h1>Grow your business</h1>
+                                            Improve your results with the click of a button. Unbounce routes your visitors to the best landing page
+                                            for people like them and—on average—gets you 30% more sales and signups.
+                                        </li>
+                                        <li>
+                                            <h1>Get your business online</h1>
+                                            Support website live all the time
+                                        </li>
+                                        <li>
+                                            <h1>Optimize SEO</h1>
+                                            Support website live all the time
+                                        </li> */}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative transform scale-[45%] h-[550px] lg:hidden space-y-8 flex flex-col justify-center items-center ">
                         <div className="transform ">
                             <Devices defaultSize={DeviceType.Laptop} />
                         </div>
@@ -192,9 +208,6 @@ const HomePage: React.FC<HomePageProps> = () => {
                     </div>
                     <div className="flex flex-1 w-full max-w-app">
                         <div className="flex-1">Join in on something big 50M Learners 190+ Countries 3.7B Code submits</div>
-                        <div className="flex items-center justify-center flex-1">
-                            <Contact />
-                        </div>
                     </div>
                     <div className="flex flex-1 w-full max-w-app">
                         <div className="flex items-center justify-center flex-1">
