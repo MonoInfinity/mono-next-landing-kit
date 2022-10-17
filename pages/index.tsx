@@ -10,6 +10,7 @@ import { routes } from '../src/core/routes';
 import { Contact } from '../src/core/components/contacts';
 import { Devices, DeviceType } from '../src/core/components/devices';
 import clsx from 'clsx';
+import { ArrowPathIcon, CloudArrowUpIcon, CogIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 
 interface HomePageProps {}
 
@@ -41,6 +42,39 @@ const content = [
     },
 ];
 
+const features = [
+    {
+        name: 'Push to Deploy',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: CloudArrowUpIcon,
+    },
+    {
+        name: 'SSL Certificates',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: LockClosedIcon,
+    },
+    {
+        name: 'Simple Queues',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: ArrowPathIcon,
+    },
+    {
+        name: 'Advanced Security',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: ShieldCheckIcon,
+    },
+    {
+        name: 'Powerful API',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: CogIcon,
+    },
+    {
+        name: 'Database Backups',
+        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        icon: ServerIcon,
+    },
+];
+
 const HomePage: React.FC<HomePageProps> = () => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
     const formMethods = useForm();
@@ -65,8 +99,8 @@ const HomePage: React.FC<HomePageProps> = () => {
         <>
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
-                <div className="relative flex flex-col items-center w-full min-h-screen space-y-12 text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center mb-12 max-w-app">
+                <div className="relative flex flex-col items-center w-full min-h-screen text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
+                    <div className="flex flex-col items-center mb-4 lg:mb-12 max-w-app">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -80,15 +114,24 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider">
-                                <h1 className="text-lg text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r lg:text-4xl animate-color-animation">
+                                <h1 className="text-xl text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r lg:text-4xl animate-color-animation">
                                     Building Your Modern Web App
                                 </h1>
-                                <h1 className="space-y-4 md:text-5xl ">Being Your Project To A Higher Level</h1>
+                                <h1 className="space-y-4 text-sm lg:text-5xl ">Being Your Project To A Higher Level</h1>
                             </div>
                         </div>
                     </div>
 
-                    <div className="relative w-full px-4 sm:px-0 max-w-app">
+                    <div>
+                        About us
+                        <div></div>
+                        divider SolidBytes is custom software development company with a headquarter in Ho Chi Minh, Vietnam. Company offers a wide
+                        range of services: Web development, Prototyping MVP development, Business Analysis, UX/UI Design, Mobile App development,
+                        Quality Assurance and Testing. We are providing specialized solutions to multiple business domains, such as healthcare,
+                        education, transport & logistics, media and others. We provide high-quality and cost-effective software development services
+                        to small and medium-sized enterprises and startups
+                    </div>
+                    <div className="relative w-full px-4 mb-4 sm:px-0 max-w-app lg:mb-12">
                         <Swiper
                             effect={'coverflow'}
                             grabCursor={true}
@@ -102,6 +145,8 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 depth: 100,
                                 modifier: 1,
                             }}
+                            initialSlide={3}
+                            draggable
                             pagination={true}
                             modules={[EffectCoverflow, Pagination, Autoplay]}
                             className="w-full"
@@ -131,148 +176,96 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="w-full px-4 max-w-app">
+                    <div className="w-full px-4 mb-4 max-w-app lg:mb-12">
                         <div className="flex flex-col items-center justify-center lg:items-center lg:space-x-16 xl:flex-row">
                             <div className="lg:flex hidden justify-center lg:w-[720px] sm:h-[640px]">
                                 <div className="relative z-10 flex items-center">
                                     <Devices setSize={setSize} />
                                 </div>
                             </div>
-                            <div className="flex flex-col items-start h-full max-w-xl space-y-5">
+                            <div className="flex flex-col justify-center h-full max-w-xl space-y-5">
                                 <div className="hidden space-x-4 text-xl font-semibold text-gray-600 lg:flex">
                                     <span className={clsx(`duration-300`, { 'text-violet-300': size === DeviceType.Laptop })}>Laptop</span>
                                     <span className={clsx(`duration-300`, { 'text-yellow-300': size === DeviceType.Tablet })}>Tablet</span>
                                     <span className={clsx(`duration-300`, { 'text-pink-300': size === DeviceType.Mobile })}>Mobile</span>
                                 </div>
-                                <div className="flex flex-col space-y-3">
-                                    <div
-                                        className={clsx(
-                                            'font-semibold lg:text-5xl md:text-4xl sm:text-3xl text-2xl duration-300 text-white text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r animate-color-animation'
-                                        )}
-                                    >
-                                        Support Multiple Devices
+
+                                <div className="flex flex-col items-center space-y-8 lg:space-y-0">
+                                    <ul className="space-y-4">
+                                        <li className="space-y-1">
+                                            <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-300')}>
+                                                Support Multiple Devices
+                                            </div>
+                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                                Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
+                                                great on any screen.
+                                            </p>
+                                        </li>
+                                        <li className="space-y-1">
+                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-300 ')}>
+                                                Customizable Design
+                                            </div>
+                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                                Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so
+                                                on.
+                                            </p>
+                                        </li>
+                                        <li className="space-y-1">
+                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-pink-300')}>
+                                                Optimize SEO and Traffic
+                                            </div>
+                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                                Improve your search engine ranking, drive more traffic to your website, and increase your revenue with
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <div className="lg:hidden">
+                                        <Devices defaultSize={DeviceType.Mobile} />
                                     </div>
-                                    <p className={clsx('font-medium duration-300 text-gray-300 lg:text-lg md:text-base text-sm')}>
-                                        Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks great
-                                        on any screen.
-                                        {/* <li>
-                                            <h1>Grow your business</h1>
-                                            Improve your results with the click of a button. Unbounce routes your visitors to the best landing page
-                                            for people like them and—on average—gets you 30% more sales and signups.
-                                        </li>
-                                        <li>
-                                            <h1>Get your business online</h1>
-                                            Support website live all the time
-                                        </li>
-                                        <li>
-                                            <h1>Optimize SEO</h1>
-                                            Support website live all the time
-                                        </li> */}
-                                    </p>
-                                    {/* <p>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
-                                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-                                        make a type specimen book.
-                                    </p> */}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="w-full py-16 bg-pink-500 bg-opacity-50 ">
-                        <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
-                            <div className="flex items-center justify-between w-full space-x-16">
-                                <div>
-                                    <h1>Grow your business</h1>
-                                    Unbounce routes your visitors to the best landing page for people like them.
-                                </div>
-                                <div>
-                                    <h1>Get your business online</h1>
-                                    Support website live all the time
-                                </div>
-                                <div>
-                                    <h1>Optimize SEO</h1>
-                                    Improving the ranking of your website in search engines
+                    <div className="relative py-16 sm:py-24 lg:py-32">
+                        <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+                            <h2 className="text-lg font-semibold text-indigo-600">Deploy faster</h2>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Everything you need to deploy your app</p>
+                            <p className="mx-auto mt-5 text-xl text-gray-500 max-w-prose">
+                                Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper malesuada.
+                                Eleifend condimentum id viverra nulla.
+                            </p>
+                            <div className="mt-12">
+                                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                                    {features.map((feature) => (
+                                        <div key={feature.name} className="pt-6">
+                                            <div className="flow-root px-6 pb-8 rounded-lg bg-gray-50">
+                                                <div className="-mt-6">
+                                                    <div>
+                                                        <span className="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                                            <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
+                                                        </span>
+                                                    </div>
+                                                    <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">{feature.name}</h3>
+                                                    <p className="mt-5 text-base text-gray-500">{feature.description}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="relative transform scale-[45%] h-[550px] lg:hidden space-y-8 flex flex-col justify-center items-center ">
-                        <div className="transform ">
-                            <Devices defaultSize={DeviceType.Laptop} />
-                        </div>
-                        <div className="flex space-x-4">
-                            <Devices defaultSize={DeviceType.Tablet} />
-                            <Devices defaultSize={DeviceType.Mobile} />
-                        </div>
-                    </div>
-                    <div className="flex flex-1 w-full max-w-app">
-                        <div className="flex-1">Join in on something big 50M Learners 190+ Countries 3.7B Code submits</div>
-                    </div>
-                    <div className="flex flex-1 w-full max-w-app">
+                    <div className="flex flex-col flex-1 w-full mb-4 max-w-app lg:flex-row lg:mb-12">
+                        <div className="flex-1">our service</div>
                         <div className="flex items-center justify-center flex-1">
                             <Contact />
                         </div>
-                        <div className="flex-1">our service</div>
                     </div>
-                    <div className="w-full py-16 bg-pink-500 bg-opacity-50 ">
+                    <div className="w-full py-16 mb-4 bg-pink-500 bg-opacity-50 lg:mb-12 ">
                         <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
-                            <div className="flex items-center justify-between w-full space-x-16">
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                                <div className="w-24 h-24">
-                                    <img src="https://picsum.photos/200/200" alt="123" />
-                                </div>
-                            </div>
+                            Join in on something big 50M Learners 190+ Countries 3.7B Code submits
                         </div>
                     </div>
-                    {/* <footer className="w-full max-w-5xl py-8 space-y-4">
-                        <div className="flex items-center justify-between w-full space-y-4">
-                            <ul className="flex space-x-4 text-sm text-gray-400 ">
-                                <li>Contact</li>
-                                <li>About</li>
-                                <li>Services</li>
-                            </ul>
-                            <ul className="flex space-x-4">
-                                <li className="">
-                                    <div className="w-6 h-6">
-                                        <img src="/assets/images/github.png" alt="Github" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="w-6 h-6">
-                                        <img src="/assets/images/facebook.png" alt="Facebook" />
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="w-6 h-6">
-                                        <img src="/assets/images/github.png" alt="Github" />
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="flex items-center justify-between mx-auto text-sm text-gray-400 l">
-                            <div className="">© {new Date().getFullYear()} Mono Infinity. All Rights Reserved. </div>
-                            <Link href={routes.termAndConditions()}>
-                                <a className="">Terms And Conditions</a>
-                            </Link>
-                        </div>
-                    </footer> */}
                 </div>
             </ContainerLayout>
         </>

@@ -113,7 +113,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 z-10 flex justify-center w-full">
+        <div className="fixed top-0 left-0 z-[999] flex justify-center w-full">
             <div className="absolute block w-full h-24 bg-inherit backdrop-blur-md"></div>
             <div className={`flex justify-between items-center p-6 fixed w-full max-w-[1440px] sm:bg-inherit ${isActive ? 'bg-violet-900' : ''}`}>
                 <Link href={'/'} passHref>

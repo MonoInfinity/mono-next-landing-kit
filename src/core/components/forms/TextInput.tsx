@@ -25,7 +25,7 @@ export const TextInput: React.FC<TextInputProps> = ({ name, label, type = 'text'
                 {...rest}
                 type={type}
                 className={_clsx(
-                    'py-1 px-2 block w-full duration-200 border border-gray-300 rounded-sm shadow-sm outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm text-gray-800',
+                    'py-1.5 px-2 block w-full duration-300 border-2 border-gray-300 rounded-sm shadow-sm outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm text-gray-800',
                     {
                         'bg-gray-200': rest.disabled,
                     }
