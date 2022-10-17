@@ -34,6 +34,8 @@ const content = [
 
 interface DevicesProps extends HTMLAttributes<HTMLDivElement>, PropsWithChildren {
     defaultSize?: DeviceType;
+    setSize?: (size: DeviceType) => void;
+    delay?: 3000;
 }
 export enum DeviceType {
     Laptop = 'laptop',
@@ -41,7 +43,7 @@ export enum DeviceType {
     Tablet = 'tablet',
 }
 
-export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) => {
+export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, setSize, delay }) => {
     const [slidesPerView, setSlidesPerView] = React.useState(1);
     const [screenSize, setScreenSize] = React.useState<DeviceType>(defaultSize || DeviceType.Mobile);
 
@@ -70,6 +72,12 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) 
             };
         }
     }, [defaultSize]);
+
+    useEffect(() => {
+        if (setSize) {
+            setSize(screenSize);
+        }
+    }, [screenSize]);
 
     return (
         <div className="relative flex flex-col items-center justify-center p-4 space-y-3 w-fit">
@@ -104,10 +112,10 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) 
                             </p>
                         </div>
                         {screenSize === DeviceType.Laptop && (
-                            <ul className="flex space-x-8 text-sm">
-                                <li>Contact</li>
-                                <li>Home</li>
-                                <li>About</li>
+                            <ul className="flex space-x-8 text-sm font-semibold ">
+                                <li className="duration-300 cursor-pointer hover:text-violet-500">Contact</li>
+                                <li className="duration-300 cursor-pointer hover:text-violet-500">Home</li>
+                                <li className="duration-300 cursor-pointer hover:text-violet-500">About</li>
                             </ul>
                         )}
                         {screenSize === DeviceType.Tablet && (
@@ -132,7 +140,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize }) 
                             centeredSlides={true}
                             slidesPerView={slidesPerView}
                             loop={true}
-                            autoplay={{ delay: 3000, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                            autoplay={{ delay: 300, pauseOnMouseEnter: true, disableOnInteraction: false }}
                             coverflowEffect={{
                                 rotate: 20,
                                 stretch: 0,

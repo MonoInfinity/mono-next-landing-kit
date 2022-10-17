@@ -83,8 +83,8 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
         return data.map((item, index) =>
             item.children ? (
                 <div className={`relative w-fit sm:w-full z-index-10 `} key={`${item.name}-${level}-${index}`}>
-                    <div className="group cursor-pointer">
-                        <button className="px-6 py-2 text-white hover:text-indigo-500 duration-300 hover:bg-slate-100 rounded-lg w-full text-start">
+                    <div className="cursor-pointer group">
+                        <button className="w-full px-6 py-2 text-white duration-300 rounded-lg hover:text-indigo-500 hover:bg-slate-100 text-start">
                             {item.name}
                         </button>
                         <div
@@ -113,11 +113,11 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
     };
 
     return (
-        <div className="flex justify-center fixed top-0 left-0 w-full z-10">
-            <div className="absolute bg-inherit backdrop-blur-md block w-full h-24"></div>
+        <div className="fixed top-0 left-0 z-10 flex justify-center w-full">
+            <div className="absolute block w-full h-24 bg-inherit backdrop-blur-md"></div>
             <div className={`flex justify-between items-center p-6 fixed w-full max-w-[1440px] sm:bg-inherit ${isActive ? 'bg-violet-900' : ''}`}>
                 <Link href={'/'} passHref>
-                    <div className="flex h-8 space-x-2 items-center cursor-pointer">
+                    <div className="flex items-center h-8 space-x-2 cursor-pointer">
                         <div className="h-8">
                             <img src="/assets/images/mono-logo-dark.png" className="h-full" />
                         </div>
@@ -135,15 +135,15 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                         {_renderNavLinks(navLinks)}
                     </div>
                     <div className="flex space-x-2">
-                        <button className="h-10 w-10 text-white p-2 bg-white/20 hover:bg-violet-500/80 duration-300 flex justify-center items-center rounded-full">
+                        <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-white/20 hover:bg-violet-500/80">
                             <UserIcon />
                         </button>
-                        <button className="h-10 w-10 p-2 text-white bg-white/20 hover:bg-violet-500/80 duration-300 flex justify-center items-center rounded-full">
+                        <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-white/20 hover:bg-violet-500/80">
                             <LightBulbIcon />
                         </button>
                         <button
                             onClick={() => setIsActive(!isActive)}
-                            className="sm:hidden h-10 w-10 p-2 text-white bg-white/20 hover:bg-violet-500/80 duration-300 flex justify-center items-center rounded-full"
+                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full sm:hidden bg-white/20 hover:bg-violet-500/80"
                         >
                             {isActive ? <XMarkIcon /> : <Bars4Icon />}
                         </button>
