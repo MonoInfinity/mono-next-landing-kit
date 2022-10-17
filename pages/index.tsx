@@ -181,19 +181,18 @@ const HomePage: React.FC<HomePageProps> = () => {
                     <div className="w-full py-16 bg-pink-500 bg-opacity-50 ">
                         <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
                             <div className="flex items-center justify-between w-full space-x-16">
-                                {/* <li>
-                                            <h1>Grow your business</h1>
-                                            Improve your results with the click of a button. Unbounce routes your visitors to the best landing page
-                                            for people like them and—on average—gets you 30% more sales and signups.
-                                        </li>
-                                        <li>
-                                            <h1>Get your business online</h1>
-                                            Support website live all the time
-                                        </li>
-                                        <li>
-                                            <h1>Optimize SEO</h1>
-                                            Support website live all the time
-                                        </li> */}
+                                <div>
+                                    <h1>Grow your business</h1>
+                                    Unbounce routes your visitors to the best landing page for people like them.
+                                </div>
+                                <div>
+                                    <h1>Get your business online</h1>
+                                    Support website live all the time
+                                </div>
+                                <div>
+                                    <h1>Optimize SEO</h1>
+                                    Improving the ranking of your website in search engines
+                                </div>
                             </div>
                         </div>
                     </div>
