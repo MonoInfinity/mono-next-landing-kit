@@ -168,13 +168,12 @@ const HomePage: React.FC<HomePageProps> = () => {
                             ))}
                         </Swiper>
                     </div>
-                    <div className="py-16 mx-auto space-y-8 max-w-app">
-                        <h1 className="text-5xl font-semibold text-center">About Us</h1>
-                        <p className="max-w-4xl text-xl leading-10 text-center">
+                    <div className="py-16 mx-auto space-y-4 lg:space-y-8 max-w-app">
+                        <h1 className="text-3xl font-semibold text-center text-violet-600">About Us</h1>
+                        <p className="max-w-4xl px-4 text-sm leading-5 text-center text-gray-300 lg:leading-10 lg:text-base">
                             Mono Infinity is a software development company that provides a wide range of services, including web, server, mobile
                             application development. We are a team of highly skilled and experienced developers who are passionate about creating
-                            innovative and high-quality software solutions. We are committed to providing our clients with the best possible service
-                            and support.
+                            innovative and high-quality software solutions. We are committed to providing our customers with the best possible
                         </p>
                     </div>
                     <div className="w-full px-4 mb-4 max-w-app lg:mb-12">
@@ -230,18 +229,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                     <div className="relative py-16 sm:py-24 lg:py-32">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                             <h2 className="text-lg font-semibold text-indigo-600">
-                                <span className="block">What our clients say</span>
+                                <span className="block">Why to choose us</span>
                             </h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better way to build</p>
-                            <p className="mx-auto mt-5 text-xl text-gray-500 max-w-prose">
-                                Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus
-                                quisquam.
-                            </p>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-indigo-600 sm:text-4xl">A better way to build</p>
+
                             <div className="mt-12">
                                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                                     {features.map((feature) => (
                                         <div key={feature.name} className="pt-6">
-                                            <div className="flow-root px-6 pb-8 rounded-lg bg-gray-50">
+                                            <div className="flow-root h-full px-6 pb-8 rounded-lg bg-gray-50">
                                                 <div className="-mt-6">
                                                     <div>
                                                         <span className="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
