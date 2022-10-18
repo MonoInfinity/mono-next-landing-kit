@@ -11,6 +11,8 @@ import { Contact } from '../src/core/components/contacts';
 import { Devices, DeviceType } from '../src/core/components/devices';
 import clsx from 'clsx';
 import { ArrowPathIcon, CloudArrowUpIcon, CogIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import CountUp from 'react-countup';
+import ReactVisibilitySensor from 'react-visibility-sensor';
 
 interface HomePageProps {}
 
@@ -262,9 +264,50 @@ const HomePage: React.FC<HomePageProps> = () => {
                             <Contact />
                         </div>
                     </div>
-                    <div className="w-full py-16 mb-4 bg-pink-500 bg-opacity-50 lg:mb-12 ">
-                        <div className="flex flex-col items-center justify-center mx-auto space-y-8 max-w-app">
-                            Join in on something big 50M Learners 190+ Countries 3.7B Code submits
+                    <div className="flex justify-center w-full px-4 py-16 mb-4 bg-blue-500/20 lg:mb-12">
+                        <div className="flex flex-col items-center justify-center space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row max-w-app">
+                            <p className="text-5xl font-semibold">Customers Service</p>
+                            <div className="flex space-x-8 text-2xl">
+                                <div className="flex flex-col">
+                                    <p className="text-4xl">
+                                        <CountUp start={1} end={17} duration={2}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Delivered Projects</p>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="text-4xl">
+                                        <CountUp start={1} end={13} duration={2}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Clients</p>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="text-4xl">
+                                        <CountUp start={1} end={3} duration={1}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Year Of Experience</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
