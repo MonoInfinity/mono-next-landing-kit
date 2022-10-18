@@ -23,7 +23,7 @@ interface MainFooterProps {}
 
 export const MainFooter: React.FC<MainFooterProps> = () => {
     return (
-        <footer className="relative flex flex-col items-center justify-center px-10 text-white">
+        <footer className="relative flex flex-col items-center justify-center px-10 text-white bg-black dark:bg-opacity-100 bg-opacity-20">
             <div className="grid max-w-screen-xl grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
                 <div className="col-span-3 md:col-span-4 ">
                     <div className="flex flex-col space-y-4">
@@ -79,21 +79,6 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                 <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7">
                     <h3 className="mb-6 text-sm text-white font-display">Marketplace</h3>
                     <ul className="flex flex-col space-y-1 text-sm text-gray-300">
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                All NFTs
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                art
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                music
-                            </a>
-                        </li>
                         <li>
                             <a className="hover:text-accent hover:text-white" href="/home/home_4#">
                                 domain names

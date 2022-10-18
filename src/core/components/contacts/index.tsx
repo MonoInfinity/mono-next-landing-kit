@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as joi from 'joi';
 import { ValidationError } from 'joi';
 import axios from 'axios';
+import { joiResolver } from '@hookform/resolvers/joi';
 import { FormWrapper, TextareaField, TextInput } from '../forms';
 
 const validatorFormat = {
@@ -91,29 +92,17 @@ const parseMessage = (joiMessage: ValidationError) => {
 };
 
 export const Contact: React.FunctionComponent<ContactProps> = () => {
-    const formMethods = useForm<ContactForm>({ defaultValues });
-    const [errors, setErrors] = React.useState<ContactForm>({ ...defaultValues });
-    const [message, setMessage] = React.useState<string>('');
+    const formMethods = useForm<ContactForm>({ defaultValues, resolver: joiResolver(contactFormValidator) });
 
     const handleOnSubmit = (data: ContactForm) => {
-        setErrors({ ...defaultValues });
-        setMessage('');
-
-        const { error, value } = contactFormValidator.validate(data, { abortEarly: false });
-        if (error) {
-            setErrors({ ...parseMessage(error) });
-            return;
-        }
-        const results = value as ContactForm;
-
-        axios
-            .get(
-                `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${results.email} - ${results.name} - ${results.message}`
-            )
-            .then(() => {
-                setMessage('Thank you for your contact');
-                formMethods.reset({ ...defaultValues });
-            });
+        // axios;
+        // .get(
+        //     `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${results.email} - ${results.name} - ${results.message}`
+        // )
+        // .then(() => {
+        //     setMessage('Thank you for your contact');
+        //     formMethods.reset({ ...defaultValues });
+        // });
     };
 
     return (
@@ -122,7 +111,7 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
                 <FormWrapper methods={formMethods}>
                     <form
                         onSubmit={formMethods.handleSubmit(handleOnSubmit)}
-                        className="px-4 py-8 space-y-4 duration-300 transform bg-white rounded-md lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 md:focus-within:translate-x-0 group md:focus-within:translate-y-0 md:hover:translate-x-0 md:hover:translate-y-0 bg-opacity-80 md:w-contact"
+                        className="px-4 py-8 space-y-4 duration-300 transform bg-white rounded-md lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 bg-opacity-80 md:w-contact"
                     >
                         <div className="space-y-2 lg:mb-8">
                             <h1 className="text-4xl font-semibold text-center text-gray-900">Get In Touch</h1>
@@ -134,7 +123,7 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
                         <TextareaField name="message" label="Message" />
 
                         <div>
-                            <button className="inline-block px-8 py-2 font-semibold text-white duration-300 bg-purple-600 rounded-sm focus:outline-none">
+                            <button className="inline-block px-8 py-3 font-semibold text-white duration-300 bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none">
                                 Submit Message
                             </button>
                         </div>

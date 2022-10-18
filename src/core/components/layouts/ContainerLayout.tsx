@@ -1,4 +1,5 @@
 import React, { HTMLAttributes, PropsWithChildren } from 'react';
+import { useTheme } from 'next-themes';
 
 interface ContainerLayoutProps extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {}
 

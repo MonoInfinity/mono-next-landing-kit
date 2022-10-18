@@ -3,6 +3,7 @@ import * as React from 'react';
 import { ContainerLayout } from '../layouts/ContainerLayout';
 import { NavbarLinkProps } from './interface/Navbar.interface';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
 
 interface MainNavBarProps {}
 
@@ -78,6 +79,7 @@ const navLinks: NavbarLinkProps[] = [
 
 export const MainNavBar: React.FC<MainNavBarProps> = () => {
     const [isActive, setIsActive] = React.useState<Boolean>(false);
+    const { theme, setTheme } = useTheme();
 
     const _renderNavLinks = (data: NavbarLinkProps[], level = 0) => {
         return data.map((item, index) =>
@@ -138,7 +140,10 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                         <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-white/20 hover:bg-violet-500/80">
                             <UserIcon />
                         </button>
-                        <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-white/20 hover:bg-violet-500/80">
+                        <button
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-black/20 dark:bg-white/20 hover:bg-violet-500/80"
+                        >
                             <LightBulbIcon />
                         </button>
                         <button

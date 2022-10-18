@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useFormContext } from 'react-hook-form';
 import { useStoreApi } from '../../store';
 import { stringHelper } from '../../utils';
 
@@ -9,21 +10,15 @@ interface FormErrorMessageProps {
 }
 
 export const FormErrorMessage: React.FC<FormErrorMessageProps> = ({ name, label, className }) => {
-    const { errorDetails } = useStoreApi();
-    const [errorMessage, setErrorMessage] = React.useState('');
-    React.useEffect(() => {
-        setErrorMessage('');
+    const { formState } = useFormContext();
 
-        const key = Object.keys(errorDetails).find((item) => stringHelper.lowercaseFirstLetter(item) === name);
-        if (key) {
-            setErrorMessage(errorDetails[key]);
-        }
-    }, [errorDetails, name]);
     return (
         <>
-            {Boolean(errorMessage) && (
+            {Boolean(formState.errors[name]?.message) && (
                 <div className={className}>
-                    {label} {errorMessage}
+                    <>
+                        {label} {formState.errors[name]?.message}
+                    </>
                 </div>
             )}
         </>

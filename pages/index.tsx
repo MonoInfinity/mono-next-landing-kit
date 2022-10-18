@@ -45,32 +45,32 @@ const content = [
 const features = [
     {
         name: 'Push to Deploy',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: "We'll deploy your code to the cloud for you. You can push to deploy to any of our supported cloud providers.",
         icon: CloudArrowUpIcon,
     },
     {
         name: 'SSL Certificates',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'We provide free SSL certificates for all of your projects. We also support custom domains and subdomains.',
         icon: LockClosedIcon,
     },
     {
         name: 'Simple Queues',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'We provide a simple queue system that you can use to run background jobs on your projects.',
         icon: ArrowPathIcon,
     },
     {
         name: 'Advanced Security',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'We provide a variety of security features to keep your projects safe and secure.',
         icon: ShieldCheckIcon,
     },
     {
         name: 'Powerful API',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'We provide a powerful API that allows you to access all of our features programmatically.',
         icon: CogIcon,
     },
     {
         name: 'Database Backups',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
+        description: 'We automatically backup all of your databases every day so you never have to worry about losing data.',
         icon: ServerIcon,
     },
 ];
@@ -122,15 +122,6 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </div>
                     </div>
 
-                    <div>
-                        About us
-                        <div></div>
-                        divider SolidBytes is custom software development company with a headquarter in Ho Chi Minh, Vietnam. Company offers a wide
-                        range of services: Web development, Prototyping MVP development, Business Analysis, UX/UI Design, Mobile App development,
-                        Quality Assurance and Testing. We are providing specialized solutions to multiple business domains, such as healthcare,
-                        education, transport & logistics, media and others. We provide high-quality and cost-effective software development services
-                        to small and medium-sized enterprises and startups
-                    </div>
                     <div className="relative w-full px-4 mb-4 sm:px-0 max-w-app lg:mb-12">
                         <Swiper
                             effect={'coverflow'}
@@ -175,7 +166,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                             ))}
                         </Swiper>
                     </div>
-
+                    <div className="py-16 mx-auto space-y-8 max-w-app">
+                        <h1 className="text-5xl font-semibold text-center">About Us</h1>
+                        <p className="max-w-4xl text-xl leading-10 text-center">
+                            Mono Infinity is a software development company that provides a wide range of services, including web, server, mobile
+                            application development. We are a team of highly skilled and experienced developers who are passionate about creating
+                            innovative and high-quality software solutions. We are committed to providing our clients with the best possible service
+                            and support.
+                        </p>
+                    </div>
                     <div className="w-full px-4 mb-4 max-w-app lg:mb-12">
                         <div className="flex flex-col items-center justify-center lg:items-center lg:space-x-16 xl:flex-row">
                             <div className="lg:flex hidden justify-center lg:w-[720px] sm:h-[640px]">
@@ -185,15 +184,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                             <div className="flex flex-col justify-center h-full max-w-xl space-y-5">
                                 <div className="hidden space-x-4 text-xl font-semibold text-gray-600 lg:flex">
-                                    <span className={clsx(`duration-300`, { 'text-violet-300': size === DeviceType.Laptop })}>Laptop</span>
-                                    <span className={clsx(`duration-300`, { 'text-yellow-300': size === DeviceType.Tablet })}>Tablet</span>
-                                    <span className={clsx(`duration-300`, { 'text-pink-300': size === DeviceType.Mobile })}>Mobile</span>
+                                    <span className={clsx(`duration-300`, { 'text-violet-600': size === DeviceType.Laptop })}>Laptop</span>
+                                    <span className={clsx(`duration-300`, { 'text-yellow-600': size === DeviceType.Tablet })}>Tablet</span>
+                                    <span className={clsx(`duration-300`, { 'text-sky-600': size === DeviceType.Mobile })}>Mobile</span>
                                 </div>
 
                                 <div className="flex flex-col items-center space-y-8 lg:space-y-0">
                                     <ul className="space-y-4">
                                         <li className="space-y-1">
-                                            <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-300')}>
+                                            <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-600')}>
                                                 Support Multiple Devices
                                             </div>
                                             <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
@@ -202,7 +201,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             </p>
                                         </li>
                                         <li className="space-y-1">
-                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-300 ')}>
+                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}>
                                                 Customizable Design
                                             </div>
                                             <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
@@ -211,7 +210,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             </p>
                                         </li>
                                         <li className="space-y-1">
-                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-pink-300')}>
+                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-sky-600')}>
                                                 Optimize SEO and Traffic
                                             </div>
                                             <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
@@ -228,11 +227,13 @@ const HomePage: React.FC<HomePageProps> = () => {
                     </div>
                     <div className="relative py-16 sm:py-24 lg:py-32">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-                            <h2 className="text-lg font-semibold text-indigo-600">Deploy faster</h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Everything you need to deploy your app</p>
+                            <h2 className="text-lg font-semibold text-indigo-600">
+                                <span className="block">What our clients say</span>
+                            </h2>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better way to build</p>
                             <p className="mx-auto mt-5 text-xl text-gray-500 max-w-prose">
-                                Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper malesuada.
-                                Eleifend condimentum id viverra nulla.
+                                Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in accusamus
+                                quisquam.
                             </p>
                             <div className="mt-12">
                                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
