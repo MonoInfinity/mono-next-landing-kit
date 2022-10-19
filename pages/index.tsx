@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { ContainerLayout } from '../src/core/components/layouts/ContainerLayout';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, EffectFade, Navigation, Pagination } from 'swiper';
+import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
-import { CommonSeo, FormWrapper, TextareaField, TextInput } from '../src/core/components';
+import { CommonSeo } from '../src/core/components';
 import { useForm } from 'react-hook-form';
 import Link from 'next/link';
-import { routes } from '../src/core/routes';
 import { Contact } from '../src/core/components/contacts';
 import { Devices, DeviceType } from '../src/core/components/devices';
 import clsx from 'clsx';
-import { ArrowPathIcon, CloudArrowUpIcon, CogIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon, ChatBubbleOvalLeftIcon, ShareIcon } from '@heroicons/react/24/outline';
 import CountUp from 'react-countup';
 import ReactVisibilitySensor from 'react-visibility-sensor';
 
@@ -56,9 +55,9 @@ const features = [
         icon: LockClosedIcon,
     },
     {
-        name: 'Simple Queues',
-        description: 'We provide a simple queue system that you can use to run background jobs on your projects.',
-        icon: ArrowPathIcon,
+        name: 'Support 24/7',
+        description: 'Our support team is available 24/7 to help you with any questions you might have.',
+        icon: ChatBubbleOvalLeftIcon,
     },
     {
         name: 'Advanced Security',
@@ -66,14 +65,32 @@ const features = [
         icon: ShieldCheckIcon,
     },
     {
-        name: 'Powerful API',
-        description: 'We provide a powerful API that allows you to access all of our features programmatically.',
-        icon: CogIcon,
+        name: 'Social Media Integration',
+        description: 'We support social media integration so you can share your app with the world.',
+        icon: ShareIcon,
     },
     {
         name: 'Database Backups',
         description: 'We automatically backup all of your databases every day so you never have to worry about losing data.',
         icon: ServerIcon,
+    },
+];
+
+const socialLinks = [
+    {
+        name: 'Github',
+        imageUrl: '/assets/images/github.png',
+        link: 'https://github.com/MonoInfinity',
+    },
+    {
+        name: 'Facebook',
+        imageUrl: '/assets/images/facebook.png',
+        link: 'https://www.facebook.com/profile.php?id=100083413363217',
+    },
+    {
+        name: 'Youtube',
+        imageUrl: '/assets/images/youtube.png',
+        link: 'https://www.youtube.com/channel/UCHTHyBTGhDAz_iJtI9tVu2w',
     },
 ];
 
@@ -168,13 +185,26 @@ const HomePage: React.FC<HomePageProps> = () => {
                             ))}
                         </Swiper>
                     </div>
-                    <div className="py-16 mx-auto space-y-4 lg:space-y-8 max-w-app">
-                        <h1 className="text-3xl font-semibold text-center text-violet-600">About Us</h1>
-                        <p className="max-w-4xl px-4 text-sm leading-5 text-center text-gray-300 lg:leading-10 lg:text-base">
-                            Mono Infinity is a software development company that provides a wide range of services, including web, server, mobile
-                            application development. We are a team of highly skilled and experienced developers who are passionate about creating
-                            innovative and high-quality software solutions. We are committed to providing our customers with the best possible
-                        </p>
+                    <div className="py-24 mx-auto space-y-4 lg:space-y-8 max-w-app">
+                        <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
+                            <div className="flex flex-col justify-center flex-1 px-6 space-y-4">
+                                <h2 className="text-4xl font-semibold text-center text-white">About Us</h2>
+                                <p className="max-w-4xl text-sm leading-5 text-justify text-gray-400 lg:leading-10 lg:text-base">
+                                    Mono Infinity is a software development company that provides a wide range of services, including web, server,
+                                    mobile application development. We are a team of highly skilled and experienced developers who are passionate
+                                    about creating innovative and high-quality software solutions. We are committed to providing our customers with
+                                    the best possible
+                                </p>
+                            </div>
+                            <div className="flex-1 w-full">
+                                <img src="assets/images/pull-request.png" />
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-center">
+                            <button className="px-8 py-3 text-lg font-medium duration-300 rounded-md bg-violet-800 hover:bg-violet-900">
+                                Explore Our Services
+                            </button>
+                        </div>
                     </div>
                     <div className="w-full px-4 mb-4 max-w-app lg:mb-12">
                         <div className="flex flex-col items-center justify-center lg:items-center lg:space-x-16 xl:flex-row">
@@ -196,7 +226,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-600')}>
                                                 Support Multiple Devices
                                             </div>
-                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
                                                 great on any screen.
                                             </p>
@@ -205,7 +235,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}>
                                                 Customizable Design
                                             </div>
-                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so
                                                 on.
                                             </p>
@@ -214,7 +244,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-sky-600')}>
                                                 Optimize SEO and Traffic
                                             </div>
-                                            <p className={clsx(' text-white duration-300 t lg:text-lg md:text-base text-sm opacity-40')}>
+                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Improve your search engine ranking, drive more traffic to your website, and increase your revenue with
                                             </p>
                                         </li>
@@ -228,24 +258,24 @@ const HomePage: React.FC<HomePageProps> = () => {
                     </div>
                     <div className="relative py-16 sm:py-24 lg:py-32">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-                            <h2 className="text-lg font-semibold text-indigo-600">
+                            <h2 className="text-lg font-semibold text-white">
                                 <span className="block">Why to choose us</span>
                             </h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-indigo-600 sm:text-4xl">A better way to build</p>
+                            <p className="mt-2 text-3xl font-bold tracking-tight text-violet-300 sm:text-4xl">A better way to build</p>
 
                             <div className="mt-12">
                                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                                     {features.map((feature) => (
                                         <div key={feature.name} className="pt-6">
-                                            <div className="flow-root h-full px-6 pb-8 rounded-lg bg-gray-50">
+                                            <div className="flow-root h-full px-6 pb-8 text-white bg-black rounded-lg bg-opacity-30">
                                                 <div className="-mt-6">
                                                     <div>
-                                                        <span className="inline-flex items-center justify-center p-3 bg-indigo-500 rounded-md shadow-lg">
+                                                        <span className="inline-flex items-center justify-center p-3 rounded-lg shadow-lg bg-violet-700">
                                                             <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
                                                         </span>
                                                     </div>
-                                                    <h3 className="mt-8 text-lg font-medium tracking-tight text-gray-900">{feature.name}</h3>
-                                                    <p className="mt-5 text-base text-gray-500">{feature.description}</p>
+                                                    <h3 className="mt-8 text-lg font-medium tracking-tight ">{feature.name}</h3>
+                                                    <p className="mt-5 text-base text-gray-400">{feature.description}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -254,19 +284,16 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col flex-1 w-full mb-4 max-w-app lg:flex-row lg:mb-12">
-                        <div className="flex-1">our service</div>
-                        <div className="flex items-center justify-center flex-1">
-                            <Contact />
-                        </div>
-                    </div>
-                    <div className="flex justify-center w-full px-4 py-16 mb-4 bg-blue-500/20 lg:mb-12">
-                        <div className="flex flex-col items-center justify-center space-x-0 space-y-6 lg:space-x-40 lg:space-y-0 lg:flex-row max-w-app">
-                            <p className="text-5xl font-semibold">Customers Service</p>
+                    <div className="flex justify-center w-full px-4 py-12 mb-4 bg-violet-800/10 lg:mb-12">
+                        <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
+                            <p className="max-w-xl text-3xl font-semibold">
+                                What value did
+                                <span className="block">We provide?</span>
+                            </p>
                             <div className="flex space-x-8 text-2xl">
                                 <div className="flex flex-col">
-                                    <p className="text-2xl">
-                                        <CountUp start={1} end={17} duration={2}>
+                                    <p className="text-4xl">
+                                        <CountUp start={1} end={17} duration={1}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
                                                     <span ref={countUpRef} />
@@ -304,6 +331,45 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <p>Year Of Experience</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col flex-1 w-full mb-4 py-28 max-w-app lg:flex-row lg:mb-12">
+                        <div className="flex flex-col flex-1 space-y-12">
+                            <div className="flex flex-col space-y-8">
+                                <h2 className="text-4xl font-semibold">Contact us</h2>
+                                <div className="space-y-2 text-sm">
+                                    <p>We would love to hear about your project.</p>
+                                    <p>One of our specialists will reach out to you within the next day.</p>
+                                </div>
+                            </div>
+                            <div className="flex space-x-10 text-base">
+                                <div className="flex flex-col space-y-3">
+                                    <p>+91 1234567890</p>
+                                    <p>Email@domain.com</p>
+                                    <p>Email@domain.com</p>
+                                    <p>9 District, Ho Chi Minh City</p>
+                                </div>
+                                <div className="flex flex-col space-y-3">
+                                    <p>+91 1234567890</p>
+                                    <p>Email@domain.com</p>
+                                    <p>Email@domain.com</p>
+                                    <p>9 District, Ho Chi Minh City</p>
+                                </div>
+                            </div>
+                            <ul className="flex space-x-4">
+                                {socialLinks.map((socialLink) => (
+                                    <li className="" key={socialLink.name}>
+                                        <Link href={socialLink.link}>
+                                            <a className="" href={socialLink.link}>
+                                                <img src={socialLink.imageUrl} alt={socialLink.name} className="w-6 h-6" />
+                                            </a>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="flex items-center justify-center flex-1">
+                            <Contact />
                         </div>
                     </div>
                 </div>
