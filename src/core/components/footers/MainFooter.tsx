@@ -23,7 +23,7 @@ interface MainFooterProps {}
 
 export const MainFooter: React.FC<MainFooterProps> = () => {
     return (
-        <footer className="relative flex flex-col items-center justify-center px-10 text-white bg-black dark:bg-opacity-100 bg-opacity-20">
+        <footer className="relative flex flex-col items-center justify-center px-10 text-white bg-black dark:bg-opacity-20">
             <div className="grid max-w-screen-xl grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
                 <div className="col-span-3 md:col-span-4 ">
                     <div className="flex flex-col space-y-4">
