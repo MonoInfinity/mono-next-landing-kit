@@ -261,11 +261,11 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </div>
                     </div>
                     <div className="flex justify-center w-full px-4 py-16 mb-4 bg-blue-500/20 lg:mb-12">
-                        <div className="flex flex-col items-center justify-center space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row max-w-app">
+                        <div className="flex flex-col items-center justify-center space-x-0 space-y-6 lg:space-x-40 lg:space-y-0 lg:flex-row max-w-app">
                             <p className="text-5xl font-semibold">Customers Service</p>
                             <div className="flex space-x-8 text-2xl">
                                 <div className="flex flex-col">
-                                    <p className="text-4xl">
+                                    <p className="text-2xl">
                                         <CountUp start={1} end={17} duration={2}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
@@ -278,7 +278,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <p>Delivered Projects</p>
                                 </div>
                                 <div className="flex flex-col">
-                                    <p className="text-4xl">
+                                    <p className="text-2xl">
                                         <CountUp start={1} end={13} duration={2}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
@@ -291,7 +291,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <p>Clients</p>
                                 </div>
                                 <div className="flex flex-col">
-                                    <p className="text-4xl">
+                                    <p className="text-2xl">
                                         <CountUp start={1} end={3} duration={1}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
