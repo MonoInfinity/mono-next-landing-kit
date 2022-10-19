@@ -19,7 +19,7 @@ export const TextareaField: React.FC<TextareaInputProps> = ({ name, label, isHid
                 </label>
             )}
             <textarea
-                className="block w-full px-2 py-1 text-gray-900 duration-200 border-gray-300 rounded-sm shadow-sm outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                className="block w-full px-2 py-1 text-gray-200 duration-200 border-gray-300 rounded-sm shadow-sm outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                 {...register(name)}
                 {...rest}
             ></textarea>
