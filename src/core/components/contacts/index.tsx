@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as joi from 'joi';
 import { ValidationError } from 'joi';
 import axios from 'axios';
+import { joiResolver } from '@hookform/resolvers/joi';
 import { FormWrapper, TextareaField, TextInput } from '../forms';
 
 const validatorFormat = {
@@ -91,50 +92,34 @@ const parseMessage = (joiMessage: ValidationError) => {
 };
 
 export const Contact: React.FunctionComponent<ContactProps> = () => {
-    const formMethods = useForm<ContactForm>({ defaultValues });
-    const [errors, setErrors] = React.useState<ContactForm>({ ...defaultValues });
-    const [message, setMessage] = React.useState<string>('');
+    const formMethods = useForm<ContactForm>({ defaultValues, resolver: joiResolver(contactFormValidator) });
 
     const handleOnSubmit = (data: ContactForm) => {
-        setErrors({ ...defaultValues });
-        setMessage('');
-
-        const { error, value } = contactFormValidator.validate(data, { abortEarly: false });
-        if (error) {
-            setErrors({ ...parseMessage(error) });
-            return;
-        }
-        const results = value as ContactForm;
-
-        axios
-            .get(
-                `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${results.email} - ${results.name} - ${results.message}`
-            )
-            .then(() => {
-                setMessage('Thank you for your contact');
-                formMethods.reset({ ...defaultValues });
-            });
+        // axios;
+        // .get(
+        //     `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${results.email} - ${results.name} - ${results.message}`
+        // )
+        // .then(() => {
+        //     setMessage('Thank you for your contact');
+        //     formMethods.reset({ ...defaultValues });
+        // });
     };
 
     return (
-        <div className={` z-30  max-w-md px-4 lg:px-0  w-full transform duration-1000 opacity-100 scale-100 `}>
+        <div className={`z-30  max-w-md px-4 lg:px-0  w-full transform duration-1000 opacity-100 scale-100 `}>
             <div className="mx-auto rounded-md bg-opacity-70 bg-gradient-to-bl from-purple-600 via-sky-600">
                 <FormWrapper methods={formMethods}>
                     <form
                         onSubmit={formMethods.handleSubmit(handleOnSubmit)}
-                        className="px-2 py-8 space-y-4 transform bg-white rounded-md lg:py-16 md:px-8 md:-translate-x-4 md:translate-y-4 bg-opacity-80 md:w-contact"
+                        className="px-4 py-8 space-y-4 duration-300 transform rounded-md bg-gray-800/40 dark:bg-white lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 dark:bg-opacity-80 md:w-contact"
                     >
-                        <div className="mb-8 space-y-2">
-                            <h1 className="text-4xl font-semibold text-center text-gray-900">Get In Touch</h1>
-                            <p className="text-center text-gray-500 ">Thank For Your Message.</p>
-                        </div>
                         <TextInput name="name" label="Name" />
                         <TextInput name="email" label="Email" />
                         <TextInput name="phone" label="Phone" />
                         <TextareaField name="message" label="Message" />
 
                         <div>
-                            <button className="inline-block px-6 py-2 font-semibold text-white duration-300 rounded-md bg-sky-600 hover:bg-sky-500 focus:outline-none">
+                            <button className="inline-block px-8 py-3 font-semibold text-white duration-300 bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none">
                                 Submit Message
                             </button>
                         </div>

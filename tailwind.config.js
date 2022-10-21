@@ -1,7 +1,38 @@
 module.exports = {
+    darkMode: 'class',
     content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
+        fontFamily: {
+            display: ['IBM Plex Mono', 'Menlo', 'monospace'],
+            body: ['IBM Plex Mono', 'Menlo', 'monospace'],
+        },
+
         extend: {
+            maxWidth: {
+                app: '1440px',
+                footer: '1024px',
+            },
+            screen: {
+                xs: '480px',
+            },
+
+            animation: {
+                'color-animation': 'color-animation 5s ease infinite',
+            },
+
+            keyframes: {
+                'color-animation': {
+                    '0%, 100%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'left center',
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center',
+                    },
+                },
+            },
+
             colors: {
                 primary: {
                     DEFAULT: '#6268F1',
@@ -57,7 +88,7 @@ module.exports = {
                 },
             },
         },
-    },
 
-    plugins: [require('@tailwindcss/forms'), require('tailwind-children')],
+        plugins: [require('@tailwindcss/forms'), require('tailwind-children')],
+    },
 };
