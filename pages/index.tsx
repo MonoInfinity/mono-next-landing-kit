@@ -187,20 +187,23 @@ const HomePage: React.FC<HomePageProps> = () => {
 
                     <div className="py-24 mx-auto space-y-20 max-w-app">
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
-                            <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-32">
-                                <p className="flex flex-col items-center justify-center space-y-4 font-semibold leading-5 text-center text-gray-200 max-w-7xl">
-                                    <span className="text-sm lg:text-5xl">
-                                        <span className="text-pink-600">Mono Infinity</span> - software development company
-                                    </span>
-                                    <span className="text-4xl">
-                                        <span className="text-pink-600">Provides</span> a wide range of services, including{' '}
-                                        <span className="text-pink-600">web, server, mobile</span> application development.
-                                    </span>
-                                </p>
+                            <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-14 lg:space-y-32">
+                                <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center text-gray-200 max-w-7xl">
+                                    <p className="text-2xl font-medium">Hello there 👋 from</p>
+                                    <div className="flex flex-col space-y-8 font-semibold lg:space-y-4">
+                                        <span className="text-3xl lg:text-5xl">
+                                            <span className="text-pink-600">Mono Infinity</span> - software development company
+                                        </span>
+                                        <span className="text-2xl lg:text-4xl">
+                                            <span className="text-pink-600">Provides</span> a wide range of services, including{' '}
+                                            <span className="text-pink-600">web, server, mobile</span> application development.
+                                        </span>
+                                    </div>
+                                </div>
 
                                 <span className="w-full h-1 max-w-xl rounded bg-blue-800/50"></span>
 
-                                <p className="max-w-3xl text-xl text-center">
+                                <p className="max-w-3xl text-lg text-center sm:text-xl">
                                     We are a team of highly skilled and experienced developers who are passionate about creating innovative and
                                     high-quality software solutions. We are committed to providing our customers with the best possible
                                 </p>
@@ -269,7 +272,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center h-full max-w-xl space-y-5">
-                                <div className="hidden space-x-4 text-xl font-semibold text-gray-600 lg:flex">
+                                <div className="hidden space-x-4 text-xl font-semibold text-gray-700 lg:flex">
                                     <span className={clsx(`duration-300`, { 'text-violet-600': size === DeviceType.Laptop })}>Laptop</span>
                                     <span className={clsx(`duration-300`, { 'text-yellow-600': size === DeviceType.Tablet })}>Tablet</span>
                                     <span className={clsx(`duration-300`, { 'text-sky-600': size === DeviceType.Mobile })}>Mobile</span>
@@ -281,7 +284,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-600')}>
                                                 Support Multiple Devices
                                             </div>
-                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
                                                 great on any screen.
                                             </p>
@@ -290,7 +293,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}>
                                                 Customizable Design
                                             </div>
-                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so
                                                 on.
                                             </p>
@@ -299,7 +302,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-sky-600')}>
                                                 Optimize SEO and Traffic
                                             </div>
-                                            <p className={clsx(' text-gray-400 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Improve your search engine ranking, drive more traffic to your website, and increase your revenue with
                                             </p>
                                         </li>
