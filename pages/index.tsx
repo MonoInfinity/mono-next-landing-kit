@@ -5,7 +5,6 @@ import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
 import { CommonSeo } from '../src/core/components';
 import { useForm } from 'react-hook-form';
-import Link from 'next/link';
 import { Contact } from '../src/core/components/contacts';
 import { Devices, DeviceType } from '../src/core/components/devices';
 import clsx from 'clsx';
@@ -185,25 +184,81 @@ const HomePage: React.FC<HomePageProps> = () => {
                             ))}
                         </Swiper>
                     </div>
-                    <div className="py-24 mx-auto space-y-4 lg:space-y-8 max-w-app">
+
+                    <div className="py-24 mx-auto space-y-20 max-w-app">
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
-                            <div className="flex flex-col justify-center flex-1 px-6 space-y-4">
-                                <h2 className="text-4xl font-semibold text-center text-white">About Us</h2>
-                                <p className="max-w-4xl text-sm leading-5 text-justify text-gray-400 lg:leading-10 lg:text-base">
-                                    Mono Infinity is a software development company that provides a wide range of services, including web, server,
-                                    mobile application development. We are a team of highly skilled and experienced developers who are passionate
-                                    about creating innovative and high-quality software solutions. We are committed to providing our customers with
-                                    the best possible
+                            <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-32">
+                                <p className="flex flex-col items-center justify-center space-y-4 font-semibold leading-5 text-center text-gray-200 max-w-7xl">
+                                    <span className="text-sm lg:text-5xl">
+                                        <span className="text-pink-600">Mono Infinity</span> - software development company
+                                    </span>
+                                    <span className="text-4xl">
+                                        <span className="text-pink-600">Provides</span> a wide range of services, including{' '}
+                                        <span className="text-pink-600">web, server, mobile</span> application development.
+                                    </span>
                                 </p>
-                            </div>
-                            <div className="flex-1 w-full">
-                                <img src="assets/images/pull-request.png" />
+
+                                <span className="w-full h-1 max-w-xl rounded bg-blue-800/50"></span>
+
+                                <p className="max-w-3xl text-xl text-center">
+                                    We are a team of highly skilled and experienced developers who are passionate about creating innovative and
+                                    high-quality software solutions. We are committed to providing our customers with the best possible
+                                </p>
                             </div>
                         </div>
                         <div className="flex items-center justify-center">
                             <button className="px-8 py-3 text-lg font-medium duration-300 rounded-md bg-violet-800 hover:bg-violet-900">
                                 Explore Our Services
                             </button>
+                        </div>
+                    </div>
+                    <div className="flex justify-center w-full px-4 py-12 mb-4 bg-violet-800/10 lg:mb-12">
+                        <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
+                            <p className="max-w-xl text-3xl font-semibold">
+                                What value did
+                                <span className="block">We provide?</span>
+                            </p>
+                            <div className="flex space-x-8 text-2xl">
+                                <div className="flex flex-col">
+                                    <p className="text-4xl">
+                                        <CountUp start={1} end={17} duration={1}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Delivered Projects</p>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="text-2xl">
+                                        <CountUp start={1} end={13} duration={2}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Clients</p>
+                                </div>
+                                <div className="flex flex-col">
+                                    <p className="text-2xl">
+                                        <CountUp start={1} end={3} duration={1}>
+                                            {({ countUpRef, start }) => (
+                                                <ReactVisibilitySensor onChange={start} delayedCall>
+                                                    <span ref={countUpRef} />
+                                                </ReactVisibilitySensor>
+                                            )}
+                                        </CountUp>
+                                        +
+                                    </p>
+                                    <p>Year Of Experience</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="w-full px-4 mb-4 max-w-app lg:mb-12">
@@ -284,89 +339,21 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center w-full px-4 py-12 mb-4 bg-violet-800/10 lg:mb-12">
-                        <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
-                            <p className="max-w-xl text-3xl font-semibold">
-                                What value did
-                                <span className="block">We provide?</span>
-                            </p>
-                            <div className="flex space-x-8 text-2xl">
-                                <div className="flex flex-col">
-                                    <p className="text-4xl">
-                                        <CountUp start={1} end={17} duration={1}>
-                                            {({ countUpRef, start }) => (
-                                                <ReactVisibilitySensor onChange={start} delayedCall>
-                                                    <span ref={countUpRef} />
-                                                </ReactVisibilitySensor>
-                                            )}
-                                        </CountUp>
-                                        +
-                                    </p>
-                                    <p>Delivered Projects</p>
-                                </div>
-                                <div className="flex flex-col">
-                                    <p className="text-2xl">
-                                        <CountUp start={1} end={13} duration={2}>
-                                            {({ countUpRef, start }) => (
-                                                <ReactVisibilitySensor onChange={start} delayedCall>
-                                                    <span ref={countUpRef} />
-                                                </ReactVisibilitySensor>
-                                            )}
-                                        </CountUp>
-                                        +
-                                    </p>
-                                    <p>Clients</p>
-                                </div>
-                                <div className="flex flex-col">
-                                    <p className="text-2xl">
-                                        <CountUp start={1} end={3} duration={1}>
-                                            {({ countUpRef, start }) => (
-                                                <ReactVisibilitySensor onChange={start} delayedCall>
-                                                    <span ref={countUpRef} />
-                                                </ReactVisibilitySensor>
-                                            )}
-                                        </CountUp>
-                                        +
-                                    </p>
-                                    <p>Year Of Experience</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div className="flex flex-col flex-1 w-full mb-4 py-28 max-w-app lg:flex-row lg:mb-12">
                         <div className="flex flex-col flex-1 space-y-12">
                             <div className="flex flex-col space-y-8">
-                                <h2 className="text-4xl font-semibold">Contact us</h2>
-                                <div className="space-y-2 text-sm">
-                                    <p>We would love to hear about your project.</p>
-                                    <p>One of our specialists will reach out to you within the next day.</p>
+                                <div className="flex flex-col items-end space-y-14">
+                                    <p className="flex flex-col font-semibold text-gray-100 text-7xl">
+                                        <span>Let&apos;s discuss</span>
+                                        <span>working together</span>
+                                    </p>
+                                    <p className="max-w-md text-xl text-gray-300">
+                                        Begin the process by providing us with a high level overview of the project you are interested in and we will
+                                        be in touch!
+                                    </p>
                                 </div>
                             </div>
-                            <div className="flex space-x-10 text-base">
-                                <div className="flex flex-col space-y-3">
-                                    <p>+91 1234567890</p>
-                                    <p>Email@domain.com</p>
-                                    <p>Email@domain.com</p>
-                                    <p>9 District, Ho Chi Minh City</p>
-                                </div>
-                                <div className="flex flex-col space-y-3">
-                                    <p>+91 1234567890</p>
-                                    <p>Email@domain.com</p>
-                                    <p>Email@domain.com</p>
-                                    <p>9 District, Ho Chi Minh City</p>
-                                </div>
-                            </div>
-                            <ul className="flex space-x-4">
-                                {socialLinks.map((socialLink) => (
-                                    <li className="" key={socialLink.name}>
-                                        <Link href={socialLink.link}>
-                                            <a className="" href={socialLink.link}>
-                                                <img src={socialLink.imageUrl} alt={socialLink.name} className="w-6 h-6" />
-                                            </a>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
                         </div>
                         <div className="flex items-center justify-center flex-1">
                             <Contact />
