@@ -347,15 +347,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col flex-1 w-full mb-4 py-28 max-w-app lg:flex-row lg:mb-12">
+                    <div className="flex flex-col flex-1 w-full mb-4 py-28 max-w-app lg:flex-row lg:mb-12 space-y-6 lg:space-y-0">
                         <div className="flex flex-col flex-1 space-y-12">
                             <div className="flex flex-col space-y-8">
-                                <div className="flex flex-col items-end space-y-14">
-                                    <p className="flex flex-col font-semibold text-violet-700 dark:text-gray-100 text-7xl">
+                                <div className="flex flex-col lg:items-end lg:space-y-14 space-y-4 px-4 items-start">
+                                    <p className="flex flex-col font-semibold text-violet-700 dark:text-gray-100 lg:text-7xl text-4xl">
                                         <span>Let&apos;s discuss</span>
                                         <span>working together</span>
                                     </p>
-                                    <p className="max-w-md text-xl dark:text-gray-300 text-violet-600">
+                                    <p className="max-w-md lg:text-xl text-base dark:text-gray-300 text-violet-600">
                                         Begin the process by providing us with a high level overview of the project you are interested in and we will
                                         be in touch!
                                     </p>
