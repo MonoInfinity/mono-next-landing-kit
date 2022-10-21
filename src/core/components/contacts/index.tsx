@@ -111,12 +111,8 @@ export const Contact: React.FunctionComponent<ContactProps> = () => {
                 <FormWrapper methods={formMethods}>
                     <form
                         onSubmit={formMethods.handleSubmit(handleOnSubmit)}
-                        className="px-4 py-8 space-y-4 duration-300 transform bg-gray-900 rounded-md dark:bg-white lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 dark:bg-opacity-80 md:w-contact"
+                        className="px-4 py-8 space-y-4 duration-300 transform rounded-md bg-gray-800/40 dark:bg-white lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 dark:bg-opacity-80 md:w-contact"
                     >
-                        {/* <div className="space-y-2 lg:mb-8">
-                            <h1 className="text-4xl font-semibold text-center text-gray-900">Get In Touch</h1>
-                            <p className="text-center text-gray-500 ">Thank For Your Message.</p>
-                        </div> */}
                         <TextInput name="name" label="Name" />
                         <TextInput name="email" label="Email" />
                         <TextInput name="phone" label="Phone" />
