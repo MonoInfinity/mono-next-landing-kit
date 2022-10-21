@@ -118,9 +118,9 @@ const HomePage: React.FC<HomePageProps> = () => {
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
                 <div className="relative flex flex-col items-center w-full min-h-screen text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center mb-4 lg:mb-12 max-w-app">
+                    <div className="flex flex-col items-center mt-10 mb-4 lg:mb-12 max-w-app">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
-                            <div className="relative hidden w-20 h-20 rounded-lg lg:block rotate-12">
+                            <div className="relative hidden w-20 h-20 rounded-full bg-violet-900/20 lg:block rotate-12 dark:bg-inherit">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                     <img alt="" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
@@ -135,7 +135,9 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 <h1 className="text-xl text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r lg:text-4xl animate-color-animation">
                                     Building Your Modern Web App
                                 </h1>
-                                <h1 className="space-y-4 text-sm lg:text-5xl ">Being Your Project To A Higher Level</h1>
+                                <h1 className="space-y-4 text-sm lg:text-5xl dark:text-gray-100 sm:text-violet-800">
+                                    Being Your Project To A Higher Level
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -188,7 +190,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                     <div className="py-24 mx-auto space-y-20 max-w-app">
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
                             <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-14 lg:space-y-32">
-                                <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center text-gray-200 max-w-7xl">
+                                <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center dark:text-gray-200 text-violet-800 max-w-7xl">
                                     <p className="text-2xl font-medium">Hello there 👋 from</p>
                                     <div className="flex flex-col space-y-8 font-semibold lg:space-y-4">
                                         <span className="text-3xl lg:text-5xl">
@@ -201,9 +203,9 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     </div>
                                 </div>
 
-                                <span className="w-full h-1 max-w-xl rounded bg-blue-800/50"></span>
+                                <span className="w-full h-1 max-w-xl rounded bg-pink-600/80 dark:bg-blue-800/50"></span>
 
-                                <p className="max-w-3xl text-lg text-center sm:text-xl">
+                                <p className="max-w-3xl text-lg text-center sm:text-xl text-violet-500">
                                     We are a team of highly skilled and experienced developers who are passionate about creating innovative and
                                     high-quality software solutions. We are committed to providing our customers with the best possible
                                 </p>
@@ -215,7 +217,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex justify-center w-full px-4 py-12 mb-4 bg-violet-800/10 lg:mb-12">
+                    <div className="flex justify-center w-full px-4 py-12 mb-4 text-blue-800 dark:text-white bg-violet-200/50 dark:bg-violet-800/10 lg:mb-12">
                         <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
                             <p className="max-w-xl text-3xl font-semibold">
                                 What value did
@@ -284,7 +286,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-600')}>
                                                 Support Multiple Devices
                                             </div>
-                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
                                                 great on any screen.
                                             </p>
@@ -293,7 +295,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}>
                                                 Customizable Design
                                             </div>
-                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so
                                                 on.
                                             </p>
@@ -302,7 +304,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-sky-600')}>
                                                 Optimize SEO and Traffic
                                             </div>
-                                            <p className={clsx(' text-gray-300 duration-300 t lg:text-lg md:text-base text-sm ')}>
+                                            <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
                                                 Improve your search engine ranking, drive more traffic to your website, and increase your revenue with
                                             </p>
                                         </li>
@@ -316,24 +318,26 @@ const HomePage: React.FC<HomePageProps> = () => {
                     </div>
                     <div className="relative py-16 sm:py-24 lg:py-32">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-                            <h2 className="text-lg font-semibold text-white">
+                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                                 <span className="block">Why to choose us</span>
                             </h2>
-                            <p className="mt-2 text-3xl font-bold tracking-tight text-violet-300 sm:text-4xl">A better way to build</p>
+                            <p className="mt-2 text-3xl font-bold tracking-tight dark:text-violet-300 text-violet-700 sm:text-4xl">
+                                A better way to build
+                            </p>
 
                             <div className="mt-12">
                                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                                     {features.map((feature) => (
                                         <div key={feature.name} className="pt-6">
-                                            <div className="flow-root h-full px-6 pb-8 text-white bg-black rounded-lg bg-opacity-30">
+                                            <div className="flow-root h-full px-6 pb-8 text-white rounded-lg dark:bg-black bg-violet-700 dark:bg-opacity-30">
                                                 <div className="-mt-6">
                                                     <div>
-                                                        <span className="inline-flex items-center justify-center p-3 rounded-lg shadow-lg bg-violet-700">
+                                                        <span className="inline-flex items-center justify-center p-3 bg-gray-700 rounded-lg shadow-lg dark:bg-violet-700">
                                                             <feature.icon className="w-6 h-6 text-white" aria-hidden="true" />
                                                         </span>
                                                     </div>
-                                                    <h3 className="mt-8 text-lg font-medium tracking-tight ">{feature.name}</h3>
-                                                    <p className="mt-5 text-base text-gray-400">{feature.description}</p>
+                                                    <h3 className="mt-8 text-lg font-medium tracking-tight text-white">{feature.name}</h3>
+                                                    <p className="mt-5 text-base text-gray-300">{feature.description}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -347,11 +351,11 @@ const HomePage: React.FC<HomePageProps> = () => {
                         <div className="flex flex-col flex-1 space-y-12">
                             <div className="flex flex-col space-y-8">
                                 <div className="flex flex-col items-end space-y-14">
-                                    <p className="flex flex-col font-semibold text-gray-100 text-7xl">
+                                    <p className="flex flex-col font-semibold text-violet-700 dark:text-gray-100 text-7xl">
                                         <span>Let&apos;s discuss</span>
                                         <span>working together</span>
                                     </p>
-                                    <p className="max-w-md text-xl text-gray-300">
+                                    <p className="max-w-md text-xl dark:text-gray-300 text-violet-600">
                                         Begin the process by providing us with a high level overview of the project you are interested in and we will
                                         be in touch!
                                     </p>

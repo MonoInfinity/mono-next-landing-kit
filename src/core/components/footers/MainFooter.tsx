@@ -23,7 +23,7 @@ interface MainFooterProps {}
 
 export const MainFooter: React.FC<MainFooterProps> = () => {
     return (
-        <footer className="relative flex flex-col items-center justify-center px-10 text-white bg-black dark:bg-opacity-20">
+        <footer className="relative flex flex-col items-center justify-center px-10 text-white dark:bg-black bg-violet-800 dark:bg-opacity-20">
             <div className="grid max-w-screen-xl grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
                 <div className="col-span-3 md:col-span-4 ">
                     <div className="flex flex-col space-y-4">
@@ -35,7 +35,7 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                                 <p className="text-[#FDFBF9] text-4xl font-semibold lg:block hidden">Mono Infinity</p>
                             </div>
                         </Link>
-                        <p className="text-sm text-gray-400">Design, Develop and Deploy website to your business. Powered by Mono Infinity team.</p>
+                        <p className="text-sm text-gray-300">Design, Develop and Deploy website to your business. Powered by Mono Infinity team.</p>
                         <ul className="flex space-x-4">
                             {socialLinks.map((socialLink) => (
                                 <li className="" key={socialLink.name}>
@@ -153,7 +153,7 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                 </div>
             </div>
             <div className="flex flex-col items-center justify-between py-8 space-y-2 sm:flex-row sm:space-y-0">
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-gray-300 ">
                     <span>© 2022 Mono Infinity. All Rights Reserved.</span>
                 </span>
             </div>

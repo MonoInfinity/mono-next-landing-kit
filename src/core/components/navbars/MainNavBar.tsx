@@ -4,6 +4,7 @@ import { ContainerLayout } from '../layouts/ContainerLayout';
 import { NavbarLinkProps } from './interface/Navbar.interface';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import clsx from 'clsx';
 
 interface MainNavBarProps {}
 
@@ -86,7 +87,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
             item.children ? (
                 <div className={`relative w-fit sm:w-full z-index-10`} key={`${item.name}-${level}-${index}`}>
                     <div className="cursor-pointer group">
-                        <button className="w-full px-6 py-2 text-white duration-300 rounded-lg hover:text-indigo-500 hover:bg-slate-100 text-start">
+                        <button className="w-full px-6 py-2 duration-300 rounded-lg dark:text-white text-violet-500 hover:text-violet-700 hover:text-indigo-500 hover:bg-slate-100 text-start">
                             {item.name}
                         </button>
                         <div
@@ -103,7 +104,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
             ) : (
                 <Link href={item.path} passHref key={`${item.name}-${level}-${index}`}>
                     <button
-                        className={`px-6 py-2 text-white hover:text-violet-500  ${
+                        className={`px-6 py-2 dark:text-white text-violet-500 hover:text-violet-700  ${
                             level > 0 ? 'hidden' : ''
                         } group-hover:block text-left duration-300 w-full ${level > 0 ? 'hover:bg-slate-100' : ''} rounded-lg`}
                     >
@@ -120,10 +121,13 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
             <div className={`flex justify-between items-center p-6 fixed w-full max-w-[1440px] sm:bg-inherit ${isActive ? 'bg-violet-900' : ''}`}>
                 <Link href={'/'} passHref>
                     <div className="flex items-center h-8 space-x-2 cursor-pointer">
-                        <div className="h-8">
-                            <img src="/assets/images/mono-logo-dark.png" className="h-full" />
+                        <div className={clsx('h-8')}>
+                            <img
+                                src={theme === 'dark' ? '/assets/images/mono-logo-dark.png' : '/assets/images/mono-logo.png'}
+                                className={clsx('h-full')}
+                            />
                         </div>
-                        <p className="text-[#FDFBF9] text-4xl font-semibold lg:block hidden">Mono Infinity</p>
+                        <p className="dark:text-[#FDFBF9] text-gray-800 text-4xl font-semibold lg:block hidden">Mono Infinity</p>
                     </div>
                 </Link>
                 <div className="flex space-x-8">
@@ -137,18 +141,18 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                         {_renderNavLinks(navLinks)}
                     </div>
                     <div className="flex space-x-2">
-                        <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-white/20 hover:bg-violet-500/80">
+                        <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-black/50 dark:bg-white/20 hover:bg-violet-500/80">
                             <UserIcon />
                         </button>
                         <button
                             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-black/20 dark:bg-white/20 hover:bg-violet-500/80"
+                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-black/50 dark:bg-white/20 hover:bg-violet-500/80"
                         >
                             <LightBulbIcon />
                         </button>
                         <button
                             onClick={() => setIsActive(!isActive)}
-                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full sm:hidden bg-white/20 hover:bg-violet-500/80"
+                            className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full sm:hidden bg-black/50 dark:bg-white/20 hover:bg-violet-500/80"
                         >
                             {isActive ? <XMarkIcon /> : <Bars4Icon />}
                         </button>
