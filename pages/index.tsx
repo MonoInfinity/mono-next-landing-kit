@@ -223,7 +223,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 What value did
                                 <span className="block">We provide?</span>
                             </p>
-                            <div className="flex space-x-8 text-2xl">
+                            <div className="flex items-end space-x-8 text-2xl">
                                 <div className="flex flex-col">
                                     <p className="text-4xl">
                                         <CountUp start={1} end={17} duration={1}>
