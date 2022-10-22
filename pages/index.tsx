@@ -118,7 +118,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <CommonSeo title="Mono Infinity" />
             <ContainerLayout>
                 <div className="relative flex flex-col items-center w-full min-h-screen text-white lg:space-y-20 md:space-y-16 sm:space-y-14">
-                    <div className="flex flex-col items-center mt-10 mb-4 lg:mb-12 max-w-app">
+                    <div className="flex flex-col items-center mb-4 lg:mt-10 lg:mb-12 max-w-app">
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-full bg-violet-900/20 lg:block rotate-12 dark:bg-inherit">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
@@ -187,7 +187,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="py-24 mx-auto space-y-20 max-w-app">
+                    <div className="py-8 mx-auto space-y-20 lg:py-24 max-w-app">
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
                             <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-14 lg:space-y-32">
                                 <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center dark:text-gray-200 text-violet-800 max-w-7xl">
@@ -223,8 +223,8 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 What value did
                                 <span className="block">We provide?</span>
                             </p>
-                            <div className="flex items-end space-x-8 text-2xl">
-                                <div className="flex flex-col">
+                            <div className="flex lg:space-x-8 lg:items-end lg:text-2xl">
+                                <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
                                     <p className="text-4xl">
                                         <CountUp start={1} end={17} duration={1}>
                                             {({ countUpRef, start }) => (
@@ -235,10 +235,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p>Delivered Projects</p>
+                                    <p className="text-center lg:text-left">Delivered Projects</p>
                                 </div>
-                                <div className="flex flex-col">
-                                    <p className="text-2xl">
+                                <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
+                                    <p className="text-4xl">
                                         <CountUp start={1} end={13} duration={2}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
@@ -248,10 +248,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p>Clients</p>
+                                    <p className="text-center lg:text-left">Clients</p>
                                 </div>
-                                <div className="flex flex-col">
-                                    <p className="text-2xl">
+                                <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
+                                    <p className="text-4xl">
                                         <CountUp start={1} end={3} duration={1}>
                                             {({ countUpRef, start }) => (
                                                 <ReactVisibilitySensor onChange={start} delayedCall>
@@ -261,7 +261,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p>Year Of Experience</p>
+                                    <p className="text-center lg:text-left">Year Of Experience</p>
                                 </div>
                             </div>
                         </div>
@@ -347,15 +347,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col flex-1 w-full mb-4 py-28 max-w-app lg:flex-row lg:mb-12">
+                    <div className="flex flex-col flex-1 w-full py-8 mb-4 space-y-6 lg:py-28 max-w-app lg:flex-row lg:mb-12 lg:space-y-0">
                         <div className="flex flex-col flex-1 space-y-12">
                             <div className="flex flex-col space-y-8">
-                                <div className="flex flex-col items-end space-y-14">
-                                    <p className="flex flex-col font-semibold text-violet-700 dark:text-gray-100 text-7xl">
+                                <div className="flex flex-col items-start px-4 space-y-4 lg:items-end lg:space-y-14">
+                                    <p className="flex flex-col text-4xl font-semibold text-violet-700 dark:text-gray-100 lg:text-7xl">
                                         <span>Let&apos;s discuss</span>
                                         <span>working together</span>
                                     </p>
-                                    <p className="max-w-md text-xl dark:text-gray-300 text-violet-600">
+                                    <p className="max-w-md text-base lg:text-xl dark:text-gray-300 text-violet-600">
                                         Begin the process by providing us with a high level overview of the project you are interested in and we will
                                         be in touch!
                                     </p>
