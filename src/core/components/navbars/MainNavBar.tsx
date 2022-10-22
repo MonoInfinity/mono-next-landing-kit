@@ -10,72 +10,15 @@ interface MainNavBarProps {}
 
 const navLinks: NavbarLinkProps[] = [
     {
-        name: 'Home',
-        path: '/',
-        children: [
-            { name: 'Home 0', path: '/' },
-            { name: 'Home 1', path: '/' },
-            { name: 'Home 2', path: '/' },
-            { name: 'Home 3', path: '/' },
-            { name: 'Home 4', path: '/' },
-            { name: 'Home 5', path: '/' },
-        ],
-    },
-    {
-        name: 'Page',
-        path: '/',
-        children: [
-            { name: 'About', path: '/about' },
-            { name: 'Contact', path: '/contact' },
-            {
-                name: 'Auth',
-                path: '/auth',
-                // children: [
-                //     { name: 'Login', path: '/login' },
-                //     { name: 'Register', path: '/register' },
-                //     { name: 'Forgot Password', path: '/forgot-password' },
-                // ],
-            },
-            {
-                name: 'User',
-                path: '/user',
-                // children: [
-                //     { name: 'Reset Password', path: '/reset-password' },
-                //     { name: 'Profile', path: '/profile' },
-                // ],
-            },
-            {
-                name: 'Product',
-                path: '/',
-                children: [
-                    { name: 'List', path: '/list' },
-                    { name: 'Detail', path: '/detail' },
-                ],
-            },
-
-            {
-                name: 'Error',
-                path: '/',
-                children: [
-                    { name: 'Error 404', path: '/404' },
-                    { name: 'Error 500', path: '/500' },
-                ],
-            },
-        ],
-    },
-    {
         name: 'About',
-        path: '/',
-        children: [
-            { name: 'About 0', path: '/' },
-            { name: 'About 1', path: '/' },
-            { name: 'About 2', path: '/' },
-            { name: 'About 3', path: '/' },
-            { name: 'About 4', path: '/' },
-            { name: 'About 5', path: '/' },
-        ],
+        path: '#about',
     },
-    { name: 'Contact', path: '/' },
+    {
+        name: 'Services',
+        path: '#services',
+    },
+
+    { name: 'Contact', path: '#contact' },
 ];
 
 export const MainNavBar: React.FC<MainNavBarProps> = () => {
@@ -83,17 +26,18 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
     const { theme, setTheme } = useTheme();
 
     const _renderNavLinks = (data: NavbarLinkProps[], level = 0) => {
+        const groupHover = `group-hover/${level}:`;
         return data.map((item, index) =>
             item.children ? (
                 <div className={`relative w-fit sm:w-full z-index-10`} key={`${item.name}-${level}-${index}`}>
-                    <div className="cursor-pointer group">
+                    <div className={`cursor-pointer group`}>
                         <button className="w-full px-6 py-2 duration-300 rounded-lg dark:text-white text-violet-500 hover:text-violet-700 hover:text-indigo-500 hover:bg-slate-100 text-start">
                             {item.name}
                         </button>
                         <div
                             className={`left-full top-0 ${
                                 level > 0 ? 'sm:left-full' : 'sm:left-0'
-                            } p-2 absolute bg-violet-800 rounded-xl hidden flex-col items-start w-44 group-hover:flex child:hidden hover:child:block ${
+                            } p-2 absolute bg-violet-800 rounded-xl hidden flex-col items-start w-44 ${groupHover}flex ${
                                 level > 0 ? 'sm:top-0' : 'sm:top-full'
                             } space-y-2 ${level > 0 ? '' : 'left-full'}`}
                         >
@@ -104,9 +48,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
             ) : (
                 <Link href={item.path} passHref key={`${item.name}-${level}-${index}`}>
                     <button
-                        className={`px-6 py-2 dark:text-white text-violet-500 hover:text-violet-700  ${
-                            level > 0 ? 'hidden' : ''
-                        } group-hover:block text-left duration-300 w-full ${level > 0 ? 'hover:bg-slate-100' : ''} rounded-lg`}
+                        className={`px-6 py-2 dark:text-white dark:hover:text-violet-500 text-violet-500 hover:text-violet-700 text-left duration-300 w-full rounded-lg`}
                     >
                         {item.name}
                     </button>
@@ -119,7 +61,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
         <div className="fixed top-0 left-0 z-[999] flex justify-center w-full">
             <div className="absolute block w-full h-24 bg-inherit backdrop-blur-md"></div>
             <div className={`flex justify-between items-center p-6 fixed w-full max-w-[1440px] sm:bg-inherit ${isActive ? 'bg-violet-900' : ''}`}>
-                <Link href={'/'} passHref>
+                <Link href={'#home'} passHref>
                     <div className="flex items-center h-8 space-x-2 cursor-pointer">
                         <div className={clsx('h-8')}>
                             <img
@@ -138,7 +80,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                             isActive ? 'bg-violet-900' : ''
                         }`}
                     >
-                        {_renderNavLinks(navLinks)}
+                        {_renderNavLinks(navLinks, 0)}
                     </div>
                     <div className="flex space-x-2">
                         <button className="flex items-center justify-center w-10 h-10 p-2 text-white duration-300 rounded-full bg-black/50 dark:bg-white/20 hover:bg-violet-500/80">

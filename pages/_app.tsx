@@ -7,10 +7,8 @@ import { Provider } from 'react-redux';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { store } from '../src/core/store';
 import { AutoLoginWrapper, MainFooter, ProgressLoadingBar } from '../src/core/components';
-import { ToastContainer } from 'react-toastify';
 const queryClient = new QueryClient();
 import { ThemeProvider } from 'next-themes';
-import { ProgressBarProvider } from '../src/core/contexts';
 import { MainNavBar } from '../src/core/components/navbars';
 import BackgroundLayout from '../src/core/components/layouts/BackgroundLayout';
 
@@ -23,15 +21,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <AutoLoginWrapper>
                     <QueryClientProvider client={queryClient}>
                         <ThemeProvider attribute="class">
-                            <ToastContainer />
-                            <ProgressBarProvider>
-                                <BackgroundLayout>
-                                    <ProgressLoadingBar />
-                                    <MainNavBar />
-                                    <Component {...pageProps} />
-                                    <MainFooter />
-                                </BackgroundLayout>
-                            </ProgressBarProvider>
+                            <BackgroundLayout>
+                                <MainNavBar />
+                                <Component {...pageProps} />
+                                <MainFooter />
+                            </BackgroundLayout>
                         </ThemeProvider>
                     </QueryClientProvider>
                 </AutoLoginWrapper>

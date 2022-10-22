@@ -4,7 +4,7 @@ interface BackgroundLayoutProps extends React.PropsWithChildren {}
 
 const BackgroundLayout: React.FunctionComponent<BackgroundLayoutProps> = ({ children }) => {
     return (
-        <div className="absolute top-0 left-0 w-full">
+        <div className="absolute top-0 left-0 w-full" id="home">
             <div className="relative w-full h-full">
                 <div className="absolute top-0 left-0 w-full h-full bg-white dark:bg-black">
                     <div className="w-full h-full dark:bg-blue-800/20">
