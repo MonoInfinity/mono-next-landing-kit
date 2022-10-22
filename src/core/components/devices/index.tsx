@@ -133,37 +133,50 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
                         )}
                     </div>
                     <div className="px-4 py-4 space-y-4">
-                        <Swiper
-                            effect={'coverflow'}
-                            grabCursor={true}
-                            centeredSlides={true}
-                            slidesPerView={slidesPerView}
-                            loop={true}
-                            autoplay={{ delay: 1500, pauseOnMouseEnter: true, disableOnInteraction: false }}
-                            coverflowEffect={{
-                                rotate: 20,
-                                stretch: 0,
-                                depth: 100,
-                                modifier: 1,
-                            }}
-                            pagination={true}
-                            modules={[EffectCoverflow, Pagination, Autoplay]}
-                            className="w-full"
-                        >
-                            {content.map((item, index) => (
-                                <SwiperSlide key={`${item.name}-${index}`}>
-                                    <div
-                                        className={_clsx(' w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border ', {
-                                            'min-w-[200px] h-[150px]': screenSize === DeviceType.Laptop,
-                                            'min-w-[200px] h-[100px]': screenSize === DeviceType.Tablet,
-                                            'min-w-[150px] h-[200px]': screenSize === DeviceType.Mobile,
-                                        })}
-                                    >
-                                        <div className="bg-slate-700 h-80 animate-pulse"></div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
+                        <div className="hidden lg:block">
+                            <Swiper
+                                effect={'coverflow'}
+                                grabCursor={true}
+                                centeredSlides={true}
+                                slidesPerView={slidesPerView}
+                                loop={true}
+                                autoplay={{ delay: 1500, pauseOnMouseEnter: true, disableOnInteraction: false }}
+                                coverflowEffect={{
+                                    rotate: 20,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 1,
+                                }}
+                                pagination={true}
+                                modules={[EffectCoverflow, Pagination, Autoplay]}
+                                className="w-full"
+                            >
+                                {content.map((item, index) => (
+                                    <SwiperSlide key={`${item.name}-${index}`}>
+                                        <div
+                                            className={_clsx(' w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border ', {
+                                                'min-w-[200px] h-[150px]': screenSize === DeviceType.Laptop,
+                                                'min-w-[200px] h-[100px]': screenSize === DeviceType.Tablet,
+                                                'min-w-[150px] h-[200px]': screenSize === DeviceType.Mobile,
+                                            })}
+                                        >
+                                            <div className="bg-slate-700 h-80 animate-pulse"></div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        </div>
+                        <div className="block lg:hidden">
+                            <div
+                                className={_clsx(' w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border ', {
+                                    'min-w-[200px] h-[150px]': screenSize === DeviceType.Laptop,
+                                    'min-w-[200px] h-[100px]': screenSize === DeviceType.Tablet,
+                                    'min-w-[150px] h-[200px]': screenSize === DeviceType.Mobile,
+                                })}
+                            >
+                                <div className="bg-slate-700 h-80 animate-pulse"></div>
+                            </div>
+                        </div>
                         {screenSize !== DeviceType.Mobile && (
                             <div className="w-full mx-auto rounded-md ">
                                 <div className="flex justify-center space-x-2 animate-pulse">

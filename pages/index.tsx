@@ -187,7 +187,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </Swiper>
                     </div>
 
-                    <div className="py-8 mx-auto space-y-20 lg:py-24 max-w-app">
+                    <div className="py-8 mx-auto space-y-20 lg:py-24 max-w-app" id="about">
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
                             <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-14 lg:space-y-32">
                                 <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center dark:text-gray-200 text-violet-800 max-w-7xl">
@@ -316,7 +316,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="relative py-16 sm:py-24 lg:py-32">
+                    <div className="relative py-16 sm:py-24 lg:py-32" id="services">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                                 <span className="block">Why to choose us</span>
@@ -347,11 +347,14 @@ const HomePage: React.FC<HomePageProps> = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-col flex-1 w-full py-8 mb-4 space-y-6 lg:py-28 max-w-app lg:flex-row lg:mb-12 lg:space-y-0">
-                        <div className="flex flex-col flex-1 space-y-12">
+                    <div
+                        className="flex flex-col flex-1 w-full py-8 mb-4 space-y-6 lg:py-28 max-w-app lg:flex-row lg:mb-12 lg:space-y-0"
+                        id="contact"
+                    >
+                        <div className="flex flex-col flex-1 px-4 space-y-12">
                             <div className="flex flex-col space-y-8">
-                                <div className="flex flex-col items-start px-4 space-y-4 lg:items-end lg:space-y-14">
-                                    <p className="flex flex-col text-4xl font-semibold text-violet-700 dark:text-gray-100 lg:text-7xl">
+                                <div className="flex flex-col items-center px-4 space-y-4 lg:items-end lg:space-y-14">
+                                    <p className="flex flex-col text-4xl font-semibold text-violet-700 dark:text-gray-100 lg:text-7xl ">
                                         <span>Let&apos;s discuss</span>
                                         <span>working together</span>
                                     </p>
