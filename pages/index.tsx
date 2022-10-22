@@ -144,7 +144,7 @@ const HomePage: React.FC<HomePageProps> = () => {
 
                     <div className="relative w-full px-4 mb-4 sm:px-0 max-w-app lg:mb-12">
                         <Swiper
-                            effect={'coverflow'}
+                            effect={`coverflow`}
                             grabCursor={true}
                             centeredSlides={true}
                             slidesPerView={slidesPerView}
