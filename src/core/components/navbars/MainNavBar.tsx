@@ -48,6 +48,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
             ) : (
                 <Link href={item.path} passHref key={`${item.name}-${level}-${index}`}>
                     <button
+                        onClick={() => setIsActive(false)}
                         className={`px-6 py-2 dark:text-white dark:hover:text-violet-500 text-violet-500 hover:text-violet-700 text-left duration-300 w-full rounded-lg`}
                     >
                         {item.name}
