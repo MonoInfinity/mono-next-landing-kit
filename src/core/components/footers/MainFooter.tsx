@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import * as React from 'react';
+import { constant } from '../../constant';
 
 const socialLinks = [
     {
@@ -24,7 +25,7 @@ interface MainFooterProps {}
 export const MainFooter: React.FC<MainFooterProps> = () => {
     return (
         <footer className="relative flex flex-col items-center justify-center px-10 text-white dark:bg-black bg-violet-800 dark:bg-opacity-20">
-            <div className="grid max-w-screen-xl grid-cols-6 pt-24 pb-12 gap-x-7 gap-y-14 md:grid-cols-12">
+            <div className="flex flex-col justify-between flex-1 w-full max-w-screen-xl pt-24 pb-12 lg:flex-row gap-x-7 gap-y-14">
                 <div className="col-span-3 md:col-span-4 ">
                     <div className="flex flex-col space-y-4">
                         <Link href={'/'} passHref>
@@ -76,80 +77,46 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                         </a>
                     </div>
                 </div>
-                <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7">
-                    <h3 className="mb-6 text-sm text-white font-display">Marketplace</h3>
-                    <ul className="flex flex-col space-y-1 text-sm text-gray-300">
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                domain names
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                collections
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-accent hover:text-white" href="/home/home_4#">
-                                virtual world
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-span-full sm:col-span-3 md:col-span-2 ">
-                    <h3 className="mb-6 text-sm text-white font-display">Company</h3>
-                    <ul className="flex flex-col space-y-1 text-sm text-gray-300">
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Explore
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Contact Us
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Our Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                FAQ
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div className="col-span-full sm:col-span-3 md:col-span-2 ">
-                    <h3 className="mb-6 text-sm text-white font-display ">My Account</h3>
-                    <ul className="flex flex-col space-y-1 text-sm text-gray-300">
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Authors
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Collection
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Author Profile
-                            </a>
-                        </li>
-                        <li>
-                            <a className="hover:text-white" href="/home/home_4#">
-                                Create Item
-                            </a>
-                        </li>
-                    </ul>
+                <div className="flex flex-col space-y-16 lg:space-y-0 lg:space-x-16 lg:flex-row">
+                    <div className="flex-1 col-span-full sm:col-span-3 md:col-span-2 min-w-[150px]">
+                        <h3 className="mb-6 text-sm text-white font-display">Company</h3>
+                        <ul className="flex flex-col space-y-1 text-sm text-gray-300">
+                            {constant.NAVBAR.map((item) => {
+                                return (
+                                    <li key={item.path}>
+                                        <a className="hover:text-white" href={item.path}>
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className="flex-1 col-span-full sm:col-span-3 md:col-span-2 min-w-[150px]">
+                        <h3 className="mb-6 text-sm text-white font-display ">My Account</h3>
+                        <ul className="flex flex-col space-y-1 text-sm text-gray-300">
+                            <li>
+                                <a className="hover:text-white" href="/home/home_4#">
+                                    Authors
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white" href="/home/home_4#">
+                                    Collection
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white" href="/home/home_4#">
+                                    Author Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white" href="/home/home_4#">
+                                    Create Item
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div className="flex flex-col items-center justify-between py-8 space-y-2 sm:flex-row sm:space-y-0">

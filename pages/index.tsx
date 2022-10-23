@@ -217,7 +217,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex justify-center w-full px-4 py-12 mb-4 text-blue-800 dark:text-white bg-violet-200/50 dark:bg-violet-800/10 lg:mb-12">
+                    <div
+                        className="flex justify-center w-full px-4 py-12 mb-4 text-blue-800 dark:text-white bg-violet-200/50 dark:bg-violet-800/10 lg:mb-12 scroll-m-12"
+                        id="values"
+                    >
                         <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
                             <p className="max-w-xl text-3xl font-semibold">
                                 What value did

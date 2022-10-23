@@ -5,6 +5,8 @@ import { ValidationError } from 'joi';
 import axios from 'axios';
 import { joiResolver } from '@hookform/resolvers/joi';
 import { FormWrapper, TextareaField, TextInput } from '../forms';
+import { useMutation } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 
 const validatorFormat = {
     'error.user-is-not-in-room': 'you is not in this room',
@@ -70,6 +72,7 @@ export const contactFormValidator = joi.object({
         .email({ tlds: { allow: false } })
         .required()
         .messages(validatorFormat),
+    phone: joi.string().min(10).max(50).required().messages(validatorFormat),
     message: joi.string().min(5).max(3000).required().messages(validatorFormat),
 });
 
@@ -81,36 +84,31 @@ const defaultValues: ContactForm = {
 };
 export interface ContactProps {}
 
-const parseMessage = (joiMessage: ValidationError) => {
-    let result = {} as any;
-    if (joiMessage.details.length) {
-        joiMessage.details.forEach((error: any) => {
-            result[`${error.path[0]}`] = error.message;
-        });
-    }
-    return result;
-};
-
 export const Contact: React.FunctionComponent<ContactProps> = () => {
     const formMethods = useForm<ContactForm>({ defaultValues, resolver: joiResolver(contactFormValidator) });
-
-    const handleOnSubmit = (data: ContactForm) => {
-        // axios;
-        // .get(
-        //     `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${results.email} - ${results.name} - ${results.message}`
-        // )
-        // .then(() => {
-        //     setMessage('Thank you for your contact');
-        //     formMethods.reset({ ...defaultValues });
-        // });
-    };
+    const sendMessageMutation = useMutation(
+        (data: ContactForm) => {
+            return axios.get(
+                `https://api.telegram.org/bot1922841476:AAHHkpNqcANlO252GcthXKF-qXhlE2EL2yY/sendMessage?chat_id=-712616515&text=${data.email} - ${data.name} - ${data.phone} - ${data.message}`
+            );
+        },
+        {
+            onSuccess: () => {
+                toast.success('Message sent successfully');
+                formMethods.reset({ ...defaultValues });
+            },
+            onError: () => {
+                toast.error('Message sent failed');
+            },
+        }
+    );
 
     return (
         <div className={`z-30  max-w-md px-4 lg:px-0  w-full transform duration-1000 opacity-100 scale-100 `}>
             <div className="mx-auto rounded-md bg-opacity-70 bg-gradient-to-bl from-purple-600 via-sky-600">
                 <FormWrapper methods={formMethods}>
                     <form
-                        onSubmit={formMethods.handleSubmit(handleOnSubmit)}
+                        onSubmit={formMethods.handleSubmit((data) => sendMessageMutation.mutate(data))}
                         className="px-4 py-8 space-y-4 duration-300 transform rounded-md bg-gray-800/40 dark:bg-white lg:space-y-8 lg:-translate-x-4 lg:translate-y-4 lg:py-16 md:px-8 dark:bg-opacity-80 md:w-contact"
                     >
                         <TextInput name="name" label="Name" />

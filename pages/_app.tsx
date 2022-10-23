@@ -6,11 +6,12 @@ import Script from 'next/script';
 import { Provider } from 'react-redux';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { store } from '../src/core/store';
-import { AutoLoginWrapper, MainFooter, ProgressLoadingBar } from '../src/core/components';
+import { AutoLoginWrapper, MainFooter } from '../src/core/components';
 const queryClient = new QueryClient();
 import { ThemeProvider } from 'next-themes';
 import { MainNavBar } from '../src/core/components/navbars';
 import BackgroundLayout from '../src/core/components/layouts/BackgroundLayout';
+import { ToastContainer } from 'react-toastify';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -29,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                         </ThemeProvider>
                     </QueryClientProvider>
                 </AutoLoginWrapper>
+                <ToastContainer />
             </Provider>
         </>
     );
