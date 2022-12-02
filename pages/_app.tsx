@@ -16,7 +16,7 @@ import { ToastContainer } from 'react-toastify';
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FEMBDB700Z" />
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-CWJBFB8XNE" />
             <Script type="text/javascript" src="/static/js/google.script.js" />
             <Provider store={store}>
                 <AutoLoginWrapper>
