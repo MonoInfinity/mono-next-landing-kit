@@ -11,34 +11,45 @@ import clsx from 'clsx';
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon, ShieldCheckIcon, ChatBubbleOvalLeftIcon, ShareIcon } from '@heroicons/react/24/outline';
 import CountUp from 'react-countup';
 import ReactVisibilitySensor from 'react-visibility-sensor';
+import Link from 'next/link';
 
 interface HomePageProps {}
 
 const content = [
     {
-        name: 'Cyber One',
-        imageUrl: '/assets/images/slide-1.jpg',
-        categories: ['NextJS', 'Micro Service'],
+        name: 'EQUO Ambassadors',
+        imageUrl: '/assets/images/website-1.png',
+        categories: ['NextJS', 'Micro Frontend'],
+        description: 'A marketing campaign website for EQUO vietnam.',
+        href: 'https://equovn.vinhnhan.com',
     },
     {
-        name: 'Equo VN',
-        imageUrl: '/assets/images/slide-2.jpg',
-        categories: ['cate1', 'cate2', 'cate3'],
+        name: 'E-TREPRENEUR',
+        imageUrl: '/assets/images/website-2.png',
+        categories: ['NextJS'],
+        description: 'Event website for University of Economics HCMC (UEH)',
+        href: 'https://e-trepreneur.vinhnhan.com',
     },
     {
         name: 'The Hood',
-        imageUrl: '/assets/images/slide-3.jpg',
-        categories: ['cate1', 'cate2', 'cate3'],
+        imageUrl: '/assets/images/website-3.png',
+        categories: ['EJS', 'NodeJS'],
+        description: 'Vietnamese food restaurant website',
+        href: 'https://riviu.vn/the-hood-beer-grill',
     },
     {
         name: 'Cyber Core',
         imageUrl: '/assets/images/slide-4.jpg',
         categories: ['cate1', 'cate2', 'cate3'],
+        description: '',
+        href: 'https://equoambassadors.com/',
     },
     {
         name: 'Trip 2',
         imageUrl: '/assets/images/slide-5.jpg',
         categories: ['cate1', 'cate2', 'cate3'],
+        description: '',
+        href: 'https://equoambassadors.com/',
     },
 ];
 
@@ -164,24 +175,30 @@ const HomePage: React.FC<HomePageProps> = () => {
                         >
                             {content.map((item, index) => (
                                 <SwiperSlide key={`${item.name}-${index}`}>
-                                    <div className="min-w-[280px] h-[480px] w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border transform group:focus:rotate-180 z-10 relative">
-                                        <div className="bg-gray-400 h-80">
-                                            <img src={item.imageUrl} className="object-cover w-full h-full" />
-                                        </div>
-                                        <div className="flex items-start flex-1 px-4 py-4 space-x-2 bg-violet-900 ">
-                                            {/* <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full"></div> */}
-                                            <div className="flex flex-col space-y-2">
-                                                <p>{item.name}</p>
-                                                <div className="flex flex-wrap items-start justify-start space-x-2">
-                                                    {item.categories.map((cate, index) => (
-                                                        <div key={index} className="px-2 py-1 mb-2 text-xs border-2 rounded-2xl w-fit">
-                                                            {cate}
-                                                        </div>
-                                                    ))}
+                                    <Link href={item.href} passHref>
+                                        <a
+                                            target="_blank"
+                                            className="min-w-[280px] h-[480px] w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border transform group:focus:rotate-180 z-10 relative"
+                                        >
+                                            <div className="bg-gray-400 h-80">
+                                                <img src={item.imageUrl} className="object-cover w-full h-full" />
+                                            </div>
+                                            <div className="flex items-start flex-1 px-4 py-4 space-x-2 bg-violet-900 ">
+                                                {/* <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full"></div> */}
+                                                <div className="flex flex-col space-y-2">
+                                                    <p>{item.name}</p>
+                                                    <div className="flex flex-wrap items-start justify-start space-x-2">
+                                                        {item.categories.map((cate, index) => (
+                                                            <div key={index} className="px-2 py-1 mb-2 text-xs border-2 rounded-2xl w-fit">
+                                                                {cate}
+                                                            </div>
+                                                        ))}
+                                                        {item.description}
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        </a>
+                                    </Link>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
