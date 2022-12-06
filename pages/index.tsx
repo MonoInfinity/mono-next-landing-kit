@@ -38,17 +38,17 @@ const content = [
         href: 'https://riviu.vn/the-hood-beer-grill',
     },
     {
-        name: 'Cyber Core',
-        imageUrl: '/assets/images/slide-4.jpg',
-        categories: ['cate1', 'cate2', 'cate3'],
-        description: '',
-        href: 'https://equoambassadors.com/',
+        name: 'ISA GRADING',
+        imageUrl: '/assets/images/website-4.png',
+        categories: ['ReactJS', 'Wix', 'NestJS'],
+        description: 'A US Company provide grading services professional collection cards',
+        href: 'https://www.isagrading.com',
     },
     {
-        name: 'Trip 2',
-        imageUrl: '/assets/images/slide-5.jpg',
-        categories: ['cate1', 'cate2', 'cate3'],
-        description: '',
+        name: 'Massrealty',
+        imageUrl: '/assets/images/website-5.png',
+        categories: ['ReactJS', 'Firebase'],
+        description: 'The First Self Service Real Estate Agency in Massachusetts, US.',
         href: 'https://equoambassadors.com/',
     },
 ];
@@ -229,9 +229,11 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                         </div>
                         <div className="flex items-center justify-center">
-                            <button className="px-8 py-3 text-lg font-medium duration-300 rounded-md bg-violet-800 hover:bg-violet-900">
-                                Explore Our Services
-                            </button>
+                            <Link href="#services">
+                                <a className="px-8 py-3 text-lg font-medium duration-300 rounded-md bg-violet-800 hover:bg-violet-900">
+                                    Explore Our Services
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <div
