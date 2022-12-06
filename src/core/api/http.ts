@@ -28,7 +28,7 @@ http.interceptors.response.use(
 
         return response;
     },
-    function (error: AxiosError) {
+    function (error: AxiosError<any>) {
         store.dispatch(apiActions.resetState());
         if (error.response?.status) store.dispatch(apiActions.updateErrorDetails(lowerCaseField(_get(error, 'response.data', {}))));
 
