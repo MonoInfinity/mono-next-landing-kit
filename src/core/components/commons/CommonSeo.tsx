@@ -9,12 +9,12 @@ export const CommonSeo: React.FC<CommonSeoProps> = ({ title }) => {
     return (
         <NextSeo
             title={title}
-            description="Mono Infinity is software development company that provides software development services, web development, mobile app development, and digital marketing services"
+            description="Mono Infinity is software development company that provides software development services, web development, mobile app development, and digital marketing services, we also provide VPS hosting services for deployment"
             openGraph={{
                 title,
                 url: 'https://monoinfinity.net',
                 description:
-                    'Mono Infinity is software development company that provides software development services, web development, mobile app development, and digital marketing services',
+                    'Mono Infinity is software development company that provides software development services, web development, mobile app development, and digital marketing services, we also provide VPS hosting services for deployment',
                 images: [
                     {
                         url: '/assets/images/banner.png',
