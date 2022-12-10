@@ -31,7 +31,7 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                         <Link href={'/'} passHref>
                             <div className="flex items-center h-8 space-x-2 cursor-pointer">
                                 <div className="h-8">
-                                    <img src="/assets/images/mono-logo-dark.png" className="h-full" />
+                                    <img src="/assets/images/mono-logo-dark.png" className="h-full" alt="Mono Infinity" />
                                 </div>
                                 <p className="text-[#FDFBF9] text-4xl font-semibold lg:block hidden">Mono Infinity</p>
                             </div>

@@ -98,7 +98,7 @@ export const Devices: React.FunctionComponent<DevicesProps> = ({ defaultSize, se
                     <div className="flex items-center justify-between w-full px-4 py-4 bg-gray-700 ">
                         <div className="flex items-center h-8 space-x-2 ">
                             <div className="h-4">
-                                <img src="/assets/images/mono-logo-dark.png" className="h-full" />
+                                <img src="/assets/images/mono-logo-dark.png" className="h-full" alt="Mono Infinity" />
                             </div>
                             <p
                                 className={_clsx('text-[#FDFBF9] text-lg font-semibold  ', {

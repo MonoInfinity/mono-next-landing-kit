@@ -62,6 +62,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                                 <img
                                     src={theme === 'dark' ? '/assets/images/mono-logo-dark.png' : '/assets/images/mono-logo.png'}
                                     className={clsx('h-full')}
+                                    alt="Mono Infinity"
                                 />
                             </div>
                         )}

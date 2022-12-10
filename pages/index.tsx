@@ -133,13 +133,13 @@ const HomePage: React.FC<HomePageProps> = () => {
                         <div className="flex flex-col items-center justify-center space-y-4 ">
                             <div className="relative hidden w-20 h-20 rounded-full bg-violet-900/20 lg:block rotate-12 dark:bg-inherit">
                                 <div className="absolute w-full rotate-0 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                                    <img alt="" src="/assets/gif/logo.gif" className="object-center" />
+                                    <img alt="animation" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                                 <div className="w-full rotate-[120deg] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute">
-                                    <img alt="" src="/assets/gif/logo.gif" className="object-center" />
+                                    <img alt="animation" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                                 <div className="w-full rotate-[240deg] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 absolute">
-                                    <img alt="" src="/assets/gif/logo.gif" className="object-center" />
+                                    <img alt="animation" src="/assets/gif/logo.gif" className="object-center" />
                                 </div>
                             </div>
                             <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider">
@@ -181,7 +181,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                             className="min-w-[280px] h-[480px] w-full flex flex-col rounded-2xl overflow-hidden border-violet-600 border transform group:focus:rotate-180 z-10 relative"
                                         >
                                             <div className="bg-gray-400 h-80">
-                                                <img src={item.imageUrl} className="object-cover w-full h-full" />
+                                                <img src={item.imageUrl} className="object-cover w-full h-full" alt={item.name} />
                                             </div>
                                             <div className="flex items-start flex-1 px-4 py-4 space-x-2 bg-violet-900 ">
                                                 {/* <div className="flex-shrink-0 w-12 h-12 bg-gray-900 rounded-full"></div> */}
