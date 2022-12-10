@@ -25,6 +25,11 @@ export const CommonSeo: React.FC<CommonSeoProps> = ({ title }) => {
                     },
                 ],
             }}
+            twitter={{
+                handle: '@handle',
+                site: '@site',
+                cardType: 'summary_large_image',
+            }}
         />
     );
 };
