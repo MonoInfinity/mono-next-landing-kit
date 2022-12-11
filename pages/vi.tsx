@@ -3,7 +3,7 @@ import { ContainerLayout } from '../src/core/components/layouts/ContainerLayout'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper';
 import { useWindowDimensions } from '../src/core/hooks/useWindowDimension';
-import { CommonSeo, MainFooter } from '../src/core/components';
+import { CommonSeo } from '../src/core/components';
 import { Contact } from '../src/core/components/contacts';
 import { Devices, DeviceType } from '../src/core/components/devices';
 import clsx from 'clsx';
@@ -14,8 +14,8 @@ import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
-import { MainNavBar } from '../src/core/components/navbars';
-import { useRouter } from 'next/router';
+import { MainFooter } from '../src/core/components/vn/footers';
+import { MainNavBar } from '../src/core/components/vn/navbars';
 
 interface HomePageProps {}
 
@@ -24,68 +24,69 @@ const content = [
         name: 'EQUO Ambassadors',
         imageUrl: '/assets/images/website-1.png',
         categories: ['NextJS', 'Micro Frontend'],
-        description: 'A marketing campaign website for EQUO Vietnam.',
+        description: 'Trang web chiến dịch tiếp thị cho EQUO Vietnam.',
         href: 'https://equovn.vinhnhan.com',
     },
     {
         name: 'E-TREPRENEUR',
         imageUrl: '/assets/images/website-2.png',
         categories: ['NextJS'],
-        description: 'Event website for University of Economics HCMC (UEH)',
+        description: 'Website sự kiện của trường Đại học Kinh tế TP.HCM (UEH).',
         href: 'https://e-trepreneur.vinhnhan.com',
     },
     {
         name: 'The Hood',
         imageUrl: '/assets/images/website-3.png',
         categories: ['EJS', 'NodeJS'],
-        description: 'Vietnamese food restaurant website',
+        description: 'Website của nhà hàng The Hood Beer & Grill.',
         href: 'https://riviu.vn/the-hood-beer-grill',
     },
     {
         name: 'ISA GRADING',
         imageUrl: '/assets/images/website-4.png',
         categories: ['ReactJS', 'Wix', 'NestJS'],
-        description: 'A US Company provide grading services professional collection cards',
+        description: 'Website định giá thẻ của Mỹ.',
         href: 'https://www.isagrading.com',
     },
     {
         name: 'Massrealty',
         imageUrl: '/assets/images/website-5.png',
         categories: ['ReactJS', 'Firebase'],
-        description: 'The First Self Service Real Estate Agency in Massachusetts, US.',
+        description: 'Website mô giới bất động sản tại Massachusetts, US.',
         href: 'https://equoambassadors.com/',
     },
 ];
 
 const features = [
     {
-        name: 'Push to Deploy',
-        description: "We'll deploy your code to the cloud for you. You can push to deploy to any of our supported cloud providers.",
+        name: 'Đẩy code lên cloud',
+        description: 'Chúng tôi sẽ đẩy code của bạn lên cloud cho bạn. Bạn có thể đẩy code lên bất kỳ nhà cung cấp cloud nào mà chúng tôi hỗ trợ.',
         icon: CloudArrowUpIcon,
     },
     {
-        name: 'SSL Certificates',
-        description: 'We provide free SSL certificates for all of your projects. We also support custom domains and subdomains.',
+        name: 'Chứng chỉ SSL',
+        description:
+            'Chúng tôi cung cấp chứng chỉ SSL miễn phí cho tất cả các dự án của bạn. Chúng tôi cũng hỗ trợ tên miền và tên miền phụ tùy chỉnh.',
         icon: LockClosedIcon,
     },
     {
-        name: 'Support 24/7',
-        description: 'Our support team is available 24/7 to help you with any questions you might have.',
+        name: 'Hỗ trợ 24/7',
+        description: 'Chúng tôi có đội hỗ trợ 24/7 để giúp bạn với bất kỳ câu hỏi nào bạn có thể có.',
         icon: ChatBubbleOvalLeftIcon,
     },
     {
-        name: 'Advanced Security',
-        description: 'We provide a variety of security features to keep your projects safe and secure.',
+        name: 'Bảo mật nâng cao',
+        description: 'Chúng tôi cung cấp các tính năng bảo mật khác nhau để giữ cho dự án của bạn an toàn và bảo mật. ',
         icon: ShieldCheckIcon,
     },
     {
-        name: 'Social Media Integration',
-        description: 'We support social media integration so you can share your app with the world.',
+        name: 'Tích hợp mạng xã hội',
+        description: 'Chúng tôi có thể tích hợp mạng xã hội của bạn vào trang web của bạn để bạn có thể chia sẻ nó với mọi người.',
         icon: ShareIcon,
     },
     {
-        name: 'Database Backups',
-        description: 'We automatically backup all of your databases every day so you never have to worry about losing data.',
+        name: 'Sao lưu cơ sở dữ liệu',
+        description: 'Chúng tôi có thể sao lưu cơ sở dữ liệu của bạn và đưa nó vào một nơi an toàn.',
         icon: ServerIcon,
     },
 ];
@@ -100,7 +101,6 @@ const HomePage: React.FC<HomePageProps> = () => {
 
     const { width } = useWindowDimensions();
     const [size, setSize] = React.useState<DeviceType>(DeviceType.Laptop);
-    const router = useRouter();
 
     React.useEffect(() => {
         if (width > 1024) {
@@ -114,12 +114,6 @@ const HomePage: React.FC<HomePageProps> = () => {
         }
         setSlidesPerView(1);
     }, [width]);
-
-    React.useEffect(() => {
-        if (router.locale === 'vi') {
-            router.push('/vi');
-        }
-    }, []);
 
     return (
         <>
@@ -142,10 +136,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                             </div>
                             <div className="flex flex-col items-center justify-center px-4 space-y-1 text-xl font-bold tracking-wider">
                                 <h1 className="text-xl text-transparent bg-clip-text from-red-500 via-violet-500 to-blue-500 bg-gradient-to-r lg:text-4xl animate-color-animation">
-                                    Building Your Modern Web App
+                                    Xây Dựng Ứng Dụng Web Chuyên Nghiệp
                                 </h1>
                                 <h1 className="space-y-4 text-sm lg:text-5xl dark:text-gray-100 sm:text-violet-800">
-                                    Being Your Project To A Higher Level
+                                    Gây dựng hương hiệu cho doanh nghiep
                                 </h1>
                             </div>
                         </div>
@@ -206,14 +200,14 @@ const HomePage: React.FC<HomePageProps> = () => {
                         <div className="flex flex-col space-x-0 lg:space-x-10 lg:flex-row">
                             <div className="flex flex-col items-center justify-center flex-1 px-6 space-y-14 lg:space-y-32">
                                 <div className="flex flex-col items-center justify-center space-y-16 leading-5 text-center dark:text-gray-200 text-violet-800 max-w-7xl">
-                                    <p className="text-2xl font-medium">Hello there 👋 from</p>
+                                    <p className="text-2xl font-medium">Lời chào 👋 đến từ</p>
                                     <div className="flex flex-col space-y-8 font-semibold lg:space-y-4">
                                         <span className="text-3xl lg:text-5xl">
-                                            <span className="text-pink-600">Mono Infinity</span> - software development company
+                                            <span className="text-pink-600">Mono Infinity</span> - Danh nghiệp phát triển phần mềm
                                         </span>
                                         <span className="text-2xl lg:text-4xl">
-                                            <span className="text-pink-600">Provides</span> a wide range of services, including{' '}
-                                            <span className="text-pink-600">web, server, mobile</span> application development.
+                                            <span className="text-pink-600">Chuyên cung cấp</span> các dịch vụ giải pháp bao gồm{' '}
+                                            <span className="text-pink-600">web, server, mobile</span> ứng dụng cho doanh nghiệp
                                         </span>
                                     </div>
                                 </div>
@@ -221,15 +215,15 @@ const HomePage: React.FC<HomePageProps> = () => {
                                 <span className="w-full h-1 max-w-xl rounded bg-pink-600/80 dark:bg-blue-800/50"></span>
 
                                 <p className="max-w-3xl text-lg text-center sm:text-xl text-violet-500">
-                                    We are a team of highly skilled and experienced developers who are passionate about creating innovative and
-                                    high-quality software solutions. We are committed to providing our customers with the best possible
+                                    Chúng tôi là đội ngũ có nhiều kinh nghiệm và kỹ năng cao trong lĩnh vực phát triển phần mềm. Chúng tôi cam kết
+                                    cung cấp cho khách hàng các giải pháp phần mềm tốt nhất có thể.
                                 </p>
                             </div>
                         </div>
                         <div className="flex items-center justify-center">
                             <Link href="#services">
                                 <a className="px-8 py-3 text-lg font-medium duration-300 rounded-md bg-violet-800 hover:bg-violet-900">
-                                    Explore Our Services
+                                    Khám phá dịch vụ của chúng tôi
                                 </a>
                             </Link>
                         </div>
@@ -240,8 +234,8 @@ const HomePage: React.FC<HomePageProps> = () => {
                     >
                         <div className="flex flex-col items-center justify-between flex-1 max-w-screen-xl space-x-0 space-y-6 lg:space-x-16 lg:space-y-0 lg:flex-row">
                             <p className="max-w-xl text-3xl font-semibold">
-                                What value did
-                                <span className="block">We provide?</span>
+                                Giá trị mà chúng tôi
+                                <span className="block">Mang lại</span>
                             </p>
                             <div className="flex lg:space-x-8 lg:items-end lg:text-2xl">
                                 <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
@@ -255,7 +249,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p className="text-center lg:text-left">Delivered Projects</p>
+                                    <p className="text-center lg:text-left">Dự án hoàn thành</p>
                                 </div>
                                 <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
                                     <p className="text-4xl">
@@ -268,7 +262,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p className="text-center lg:text-left">Clients</p>
+                                    <p className="text-center lg:text-left">Khách hàng</p>
                                 </div>
                                 <div className="flex flex-col items-center flex-1 lg:flex-auto lg:items-start">
                                     <p className="text-4xl">
@@ -281,7 +275,7 @@ const HomePage: React.FC<HomePageProps> = () => {
                                         </CountUp>
                                         +
                                     </p>
-                                    <p className="text-center lg:text-left">Year Of Experience</p>
+                                    <p className="text-center lg:text-left">Kinh nghiệm làm việc</p>
                                 </div>
                             </div>
                         </div>
@@ -304,28 +298,29 @@ const HomePage: React.FC<HomePageProps> = () => {
                                     <ul className="space-y-4">
                                         <li className="space-y-1">
                                             <div className={clsx('font-bold lg:text-3xl md:text-2xl duration-300 text-violet-600')}>
-                                                Support Multiple Devices
+                                                Hỗ trợ đa thiết bị
                                             </div>
                                             <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
-                                                Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks
-                                                great on any screen.
+                                                Thiết kế cho tất cả các thiết bị, từ máy tính để bàn đến điện thoại di động và mọi thứ giữa chúng.
+                                                Chúng tôi đảm bảo ứng dụng của bạn trông tốt trên mọi màn hình.
                                             </p>
                                         </li>
                                         <li className="space-y-1">
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}>
-                                                Customizable Design
+                                                Tùy chỉnh giao diện
                                             </div>
+                                            <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-yellow-600 ')}></div>
                                             <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
-                                                Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so
-                                                on.
+                                                Tùy chỉnh giao diện người dùng để tạo ra trải nghiệm tốt nhất cho người dùng của bạn.
                                             </p>
                                         </li>
                                         <li className="space-y-1">
                                             <div className={clsx('font-bold  lg:text-3xl md:text-2xl duration-300 text-sky-600')}>
-                                                Optimize SEO and Traffic
+                                                Tối ưu hóa SEO và lưu lượng truy cập
                                             </div>
                                             <p className={clsx(' dark:text-gray-300 text-gray-800 duration-300 t lg:text-lg md:text-base text-sm ')}>
-                                                Improve your search engine ranking, drive more traffic to your website, and increase your revenue with
+                                                Cải thiện vị trí tìm kiếm trên công cụ tìm kiếm, tăng lưu lượng truy cập đến trang web của bạn và tăng
+                                                doanh thu của bạn
                                             </p>
                                         </li>
                                     </ul>
@@ -339,10 +334,10 @@ const HomePage: React.FC<HomePageProps> = () => {
                     <div className="relative py-16 sm:py-24 lg:py-32" id="services">
                         <div className="max-w-md px-4 mx-auto text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                             <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
-                                <span className="block">Why to choose us</span>
+                                <span className="block">Tạo sao lại chọn chúng tôi</span>
                             </h2>
                             <p className="mt-2 text-3xl font-bold tracking-tight dark:text-violet-300 text-violet-700 sm:text-4xl">
-                                A better way to build
+                                Xây dụng ứng dụng hoàn thiện hơn
                             </p>
 
                             <div className="mt-12">
@@ -375,12 +370,12 @@ const HomePage: React.FC<HomePageProps> = () => {
                             <div className="flex flex-col space-y-8">
                                 <div className="flex flex-col items-center px-4 space-y-4 lg:items-end lg:space-y-14">
                                     <p className="flex flex-col text-4xl font-semibold text-violet-700 dark:text-gray-100 lg:text-7xl ">
-                                        <span>Let&apos;s discuss</span>
-                                        <span>working together</span>
+                                        <span>Tiến đến thảo luận</span>
+                                        <span>Làm việc cùng nhau</span>
                                     </p>
                                     <p className="max-w-md text-base lg:text-xl dark:text-gray-300 text-violet-600">
-                                        Begin the process by providing us with a high level overview of the project you are interested in and we will
-                                        be in touch!
+                                        Bắt đầu quá trình bằng cách cung cấp cho chúng tôi một tổng quan cấp cao về dự án bạn quan tâm và chúng tôi sẽ
+                                        liên hệ với bạn!
                                     </p>
                                 </div>
                             </div>

@@ -24,9 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <QueryClientProvider client={queryClient}>
                         <ThemeProvider attribute="class">
                             <BackgroundLayout>
-                                <MainNavBar />
                                 <Component {...pageProps} />
-                                <MainFooter />
                             </BackgroundLayout>
                         </ThemeProvider>
                     </QueryClientProvider>
