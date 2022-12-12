@@ -6,5 +6,5 @@ function gtag() {
 }
 gtag('js', new Date());
 
-gtag('config', 'G-FEMBDB700Z');
+gtag('config', 'G-CWJBFB8XNE');
 

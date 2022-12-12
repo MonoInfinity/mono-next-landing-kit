@@ -1,0 +1,31 @@
+
+{
+    "home":{
+        "title": "Xây dựng website chuyên nghiệp",
+        "subtitle" :"Nâng tầm thương hiệu của bạn"
+    }, 
+    "hello": "Gửi chào chân thành 👋 từ",
+    "company_name": "Mono Infinity",
+    "company_title": "công ty phát triển phần mềm",
+    "company_description_1": "cung cấp ",
+    "company_description_2": "dịch vụ thiết kế website, ứng dụng cho",
+    "company_description_3": "web, server, mobile",
+    "company_description_4": "với nhiều năm kinh nghiệm",
+    "company_subtitle": "Chúng tôi là một đội ngũ phát triển phần mềm chuyên nghiệp, cung cấp các dịch vụ thiết kế website, ứng dụng web, server, mobile với nhiều năm kinh nghiệm. Chúng tôi có đội ngũ nhân viên chuyên nghiệp, nhiệt tình, năng động, luôn sẵn sàng hỗ trợ khách hàng.",
+    "company_explore_button": "Khám phá dịch vụ",
+    "company_value_1": "What value did We provide?",
+    "company_value_2": "We provide?",
+    "company_value_key_1": "Delivered Projects",
+    "company_value_key_2": "Clients",
+    "company_value_key_3": "Years of Experience",
+    "company_responsive": [{
+        "title": "Support Multiple Devices",
+        "description": "Design for all devices, from desktop to mobile, and everything in between. We make sure your app looks great on any screen."
+    }, {
+        "title": "Customizable Design",
+        "description": "Make your app beautiful and unique with our customizable design. You can change colors, fonts, and so on."
+    }, {
+        "title": "Optimize SEO and Traffic",
+        "description": "Improve your search engine ranking, drive more traffic to your website, and increase your revenue with"
+    }]
+}
