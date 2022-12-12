@@ -92,7 +92,7 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                             })}
                         </ul>
                     </div>
-                    <div className="flex-1 col-span-full sm:col-span-3 md:col-span-2 min-w-[150px]">
+                    {/* <div className="flex-1 col-span-full sm:col-span-3 md:col-span-2 min-w-[150px]">
                         <h3 className="mb-6 text-sm text-white font-display ">My Account</h3>
                         <ul className="flex flex-col space-y-1 text-sm text-gray-300">
                             <li>
@@ -116,7 +116,7 @@ export const MainFooter: React.FC<MainFooterProps> = () => {
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="flex flex-col items-center justify-between py-8 space-y-2 sm:flex-row sm:space-y-0">

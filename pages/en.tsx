@@ -3,14 +3,14 @@ import { HomeLayout } from '../src/core/layout/HomeLayout';
 import { locales } from '../src/locales';
 import { Home } from '../src/screens/home';
 
-interface HomeVNPageProps {}
+interface HomePageProps {}
 
-const HomeVNPage: React.FunctionComponent<HomeVNPageProps> = () => {
+const HomePage: React.FunctionComponent<HomePageProps> = () => {
     return (
-        <HomeLayout locale="vi">
-            <Home data={locales.vi} />
+        <HomeLayout locale="en">
+            <Home data={locales.en} />
         </HomeLayout>
     );
 };
 
-export default HomeVNPage;
+export default HomePage;

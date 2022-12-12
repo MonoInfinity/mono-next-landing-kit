@@ -12,7 +12,6 @@ import { ThemeProvider } from 'next-themes';
 import { MainNavBar } from '../src/core/components/navbars';
 import BackgroundLayout from '../src/core/components/layouts/BackgroundLayout';
 import { ToastContainer } from 'react-toastify';
-import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -35,4 +34,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     );
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;

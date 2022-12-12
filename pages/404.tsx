@@ -6,7 +6,7 @@ interface NotFoundPageProps {}
 const NotFoundPage: React.FC<NotFoundPageProps> = () => {
     return (
         <div className="relative z-10 flex-1 ">
-            <div className="min-h-full px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
+            <div className="min-h-screen px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
                 <div className="mx-auto mt-16 lg:mt-32 max-w-max">
                     <main className="sm:flex">
                         <p className="text-4xl font-bold tracking-tight text-white sm:text-5xl">404</p>

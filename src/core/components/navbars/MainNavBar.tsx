@@ -1,16 +1,17 @@
-import { Bars4Icon, BarsArrowDownIcon, LightBulbIcon, UserIcon, WalletIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { Bars4Icon, LightBulbIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import * as React from 'react';
-import { ContainerLayout } from '../layouts/ContainerLayout';
 import { NavbarLinkProps } from './interface/Navbar.interface';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import clsx from 'clsx';
-import { constant } from '../../constant';
 import { useRouter } from 'next/router';
+import { LocaleType } from '../../../locales';
 
-interface MainNavBarProps {}
+interface MainNavBarProps {
+    data: LocaleType;
+}
 
-export const MainNavBar: React.FC<MainNavBarProps> = () => {
+export const MainNavBar: React.FC<MainNavBarProps> = ({ data }) => {
     const [isActive, setIsActive] = React.useState<Boolean>(false);
     const { theme, setTheme } = useTheme();
     const [domLoaded, setDomLoaded] = React.useState(false);
@@ -79,7 +80,7 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                             isActive ? 'bg-gray-900/90' : ''
                         }`}
                     >
-                        {_renderNavLinks(constant.NAVBAR, 0)}
+                        {_renderNavLinks(data['navbar.link'], 0)}
                     </div>
                     <div className="flex space-x-2">
                         <button
@@ -89,10 +90,10 @@ export const MainNavBar: React.FC<MainNavBarProps> = () => {
                             <LightBulbIcon />
                         </button>
                         <button
-                            onClick={() => router.push('/vi')}
-                            className="flex items-center justify-center w-10 h-10 p-2 text-sm font-semibold text-white duration-300 rounded-full bg-black/50 dark:bg-white/20 hover:bg-violet-500/80"
+                            onClick={() => router.push(data['navbar.change_language'].path)}
+                            className="flex items-center justify-center w-10 h-10 p-2 text-sm font-semibold text-white uppercase duration-300 rounded-full bg-black/50 dark:bg-white/20 hover:bg-violet-500/80"
                         >
-                            VI
+                            {data['navbar.change_language'].key}
                         </button>
                         <button
                             onClick={() => setIsActive(!isActive)}
